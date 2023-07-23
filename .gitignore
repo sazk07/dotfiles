@@ -1,6 +1,6 @@
 .cfg
 bin/.local/bin
-nvim/.config/nvim/plugin/packer_compiled.lua
+.config/nvim/plugin/packer_compiled.lua
 **/bookmarks/**
 .git
 /node_modules

@@ -154,4 +154,5 @@ mkdircd() {
   mkdir -p "$@" && cd "$_"
 }
 
+# add config command for dotfiles
 alias config='/usr/bin/git --git-dir=/home/sazk/.cfg/ --work-tree=/home/sazk'

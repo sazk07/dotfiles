@@ -132,7 +132,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 alias rspd='rclone sync --progress --drive-acknowledge-abuse --exclude="**/node_modules/**"'
-alias sl='exa -las=accessed --time-style=long-iso'
+alias sl='eza -las=accessed --time-style=long-iso'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -156,3 +156,7 @@ mkdircd() {
 
 # add config command for dotfiles
 alias config='/usr/bin/git --git-dir=/home/sazk/.cfg/ --work-tree=/home/sazk'
+
+# add deno dir to PATH
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"

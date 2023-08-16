@@ -1,1 +1,1 @@
-require("sazk")
+require("core")

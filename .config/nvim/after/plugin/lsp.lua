@@ -1,57 +1,135 @@
-local lsp = require('lsp-zero')
+local ok, start = pcall(function()
+	local mason = require("mason")
+	local mason_lspconfig = require("mason-lspconfig")
+	local lspconfig = require("lspconfig")
+	local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-lsp.preset('recommended')
-lsp.ensure_installed({
-	'eslint',
-  'tsserver',
-})
--- fix undefined global vim
--- lsp.configure('lua-language-server', {
---   settings = {
---     Lua = {
---       diagnostic = {
---         globals = { 'vim' }
---       }
---     }
---   }
--- })
-lsp.nvim_workspace()
+	mason.setup({
+		ui = {
+			icons = {
+				package_installed = "✓",
+				package_pending = "➜",
+				package_uninstalled = "✗",
+			},
+		},
+	})
 
-local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
-local cmp_mappings = lsp.defaults.cmp_mappings({
-	['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-	['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-	['<C-o>'] = cmp.mapping.confirm({ select = true }),
-	['<C-Space>'] = cmp.mapping.complete(),
-})
+	mason_lspconfig.setup({
+		ensure_installed = {
+			"astro",
+			"bashls",
+			"clangd",
+			"cssls",
+			"eslint",
+			"emmet_ls",
+			"gopls",
+			"html",
+			"htmx",
+			"jsonls",
+			"ltex",
+			"lua_ls",
+			"neocmake",
+			"pyright",
+			"sqlls",
+			"svelte",
+			"tailwindcss",
+			"volar",
+			"yamlls",
+		},
+	})
+	mason_lspconfig.setup_handlers({
+		["eslint"] = function()
+			require("typescript-tools").setup({
+				expose_as_code_action = { "organize_imports" },
+			})
+		end,
+	})
 
-lsp.setup_nvim_cmp({
-	mapping = cmp_mappings
-})
-lsp.set_preferences({
-    suggest_lsp_servers = true,
-})
+	lspconfig.pyright.setup({
+		capabilities = capabilities,
+		filetypes = { "python" },
+	})
+	lspconfig.clangd.setup({
+		capabilities = capabilities,
+		filetypes = { "cpp", "c" },
+	})
+	lspconfig.gopls.setup({
+		capabilities = capabilities,
+		cmd = { "gopls" },
+		filetypes = { "go", "gomod", "gowork", "gotmpl" },
+		root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
+		settings = {
+			gopls = {
+				completeUnimported = true,
+				usePlaceholders = true,
+				staticcheck = true,
+				gofumpt = true,
+				analyses = {
+					unusedparams = true,
+				},
+			},
+		},
+	})
 
-lsp.on_attach(function(client, bufnr)
-  local opts = {buffer = bufnr, remap = false}
+	local servers = {
+		"astro",
+		"bashls",
+		"cssls",
+		"emmet_ls",
+		"html",
+		"htmx",
+		"jsonls",
+		"ltex",
+		"lua_ls",
+		"neocmake",
+		"sqlls",
+		"svelte",
+		"volar",
+		"yamlls",
+	}
+	for _, lsp in ipairs(servers) do
+		lspconfig[lsp].setup({
+			capabilities = capabilities,
+		})
+	end
 
+	-- needed only if using tsserver and not typescript-tools.nvim
+	-- Organize Imports function
+	-- local function organize_imports()
+	-- 	local params = {
+	-- 		command = "_typescript.organizeImports",
+	-- 		arguments = { vim.api.nvim_buf_get_name(0) },
+	-- 	}
+	-- 	vim.lsp.buf.execute_command(params)
+	-- end
 
-  vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-  vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-  vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-  vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
-  vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-  vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-  vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-  vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
-  vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-  vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+	-- add tsserver if not using typescript-tools.nvim
+	-- local ts_servers = {"eslint", "tailwindcss"}
+	-- for _, lsp in ipairs(ts_servers) do
+	--   lspconfig[lsp].setup({
+	--     capabilities = capabilities,
+	--   root_dir = nvim_lsp.util.root_pattern("package.json"),
+	--   single_file_support = false
+	-- uncomment below if using tsserver
+	-- init_options = {
+	-- preferences = {
+	-- disableSuggestions = true,
+	-- }
+	-- },
+	-- commands = {
+	-- OrganizeImports = {
+	-- organize_imports,
+	-- description = "Organize Imports",
+	-- },
+	-- },
+	--   })
+	-- end
 end)
 
-lsp.setup()
+if not ok then
+	start = nil
+end
 
-vim.diagnostic.config({
-	virtual_text = true
-})
-
+if start then
+	start()
+end

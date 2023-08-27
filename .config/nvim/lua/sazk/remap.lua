@@ -34,3 +34,7 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set('n', '<leader>/', '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>')
 vim.keymap.set('v', '<leader>/', '<ESC><cmd>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>')
+
+vim.keymap.set('n', '<leader>o', 'o<Esc>0_D')
+vim.keymap.set('n', '<leader>O', 'O<Esc>0_D')
+

@@ -70,6 +70,22 @@ local ok, start = pcall(function()
 			},
 		},
 	})
+	lspconfig.ltex.setup({
+		capabilities = capabilities,
+		filetypes = {
+			"tex",
+			"markdown",
+			"bib",
+			"gitcommit",
+			"org",
+			"rst",
+			"rnoweb",
+			"pandoc",
+			"quarto",
+			"rmd",
+			"context",
+		},
+	})
 
 	local servers = {
 		"astro",
@@ -79,7 +95,6 @@ local ok, start = pcall(function()
 		"html",
 		"htmx",
 		"jsonls",
-		"ltex",
 		"lua_ls",
 		"neocmake",
 		"sqlls",

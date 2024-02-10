@@ -26,8 +26,8 @@ local ok, start = pcall(function()
 	local default_cmp_sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
-		{ name = "buffer", max_item_count = 3 },
-		{ name = "path", max_item_count = 3 },
+		{ name = "buffer" },
+		{ name = "path" },
 		{ name = "nvim_lua" },
 	})
 

@@ -7,5 +7,4 @@ if web_dev_icons then
 		color_icons = true,
 		default = true,
 	})
-	web_dev_icons.get_icons()
 end

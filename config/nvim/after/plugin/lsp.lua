@@ -86,12 +86,33 @@ local ok, start = pcall(function()
 			"context",
 		},
 	})
+	lspconfig.emmet_ls.setup({
+		capabilities = vim.lsp.protocol.make_client_capabilities(),
+		filetypes = {
+			"css",
+			"html",
+			"javascript",
+			"javascriptreact",
+			"less",
+			"sass",
+			"scss",
+			"typescript",
+			"typescriptreact",
+			"vue",
+		},
+		init_options = {
+			html = {
+				options = {
+					["bem.enabled"] = true
+				}
+			}
+		}
+	})
 
 	local servers = {
 		"astro",
 		"bashls",
 		"cssls",
-		"emmet_ls",
 		"html",
 		"htmx",
 		"jsonls",

@@ -228,7 +228,7 @@ local ok, start = pcall(function()
 			})
 			vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, {
 				buffer = ev.buf,
-				desc = "variable signature help",
+				desc = "signature help",
 			})
 		end,
 	})

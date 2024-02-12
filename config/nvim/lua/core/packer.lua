@@ -88,10 +88,15 @@ return require("packer").startup(function(use)
 		"rafamadriz/friendly-snippets",
 	})
 
+	use({
+		"pmizio/typescript-tools.nvim",
+		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+	})
+
 	-- Linter
 	use({
 		"mfussenegger/nvim-lint",
-		event = { "BufReadPost" },
+		event = { "InsertLeave" },
 		config = function()
 			require("custom.lint")
 		end,
@@ -265,13 +270,18 @@ return require("packer").startup(function(use)
 	})
 
 	use({
-		"pmizio/typescript-tools.nvim",
-		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		"kosayoda/nvim-lightbulb",
+		event = "BufReadPost",
+		config = function()
+			require("custom.nvim-lightbulb")
+		end,
 	})
 
 	-- use ({ "ThePrimeagen/harpoon" })
 
-	-- themes
+	-- use({ "ray-x/lsp_signature.nvim", })
+
+	-- Themes
 	use({
 		{ "navarasu/onedark.nvim" },
 		"tanvirtin/monokai.nvim",

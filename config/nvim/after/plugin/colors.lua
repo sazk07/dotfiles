@@ -44,6 +44,45 @@
 -- local tokyonight_moon_ok, tokyonight_moon = pcall(require, "tokyonight")
 -- local tokyonight_day_ok, tokyonight_day = pcall(require, "tokyonight")
 -- local embark_ok, embark = pcall(require, "embark")
+-- local witch_ok, witch = pcall(require, "witch")
+-- local abscs_ok, abscs = pcall(require, "abscs")
+-- local neon_default_ok, neon_default = pcall(require, "neon")
+-- local neon_dark_ok, neon_dark = pcall(require, "neon")
+-- local vscode_ok, vscode = pcall(require, "vscode")
+-- local visual_studio_code_ok, visual_studio_code = pcall(require, "visual_studio_code")
+-- local material_darker_ld_ok, material_darker_ld = pcall(require, "material")
+-- local material_lighter_ld_ok, material_lighter_ld = pcall(require, "material")
+-- local material_oceanic_ld_ok, material_oceanic_ld = pcall(require, "material")
+-- local material_palenight_ld_ok, material_palenight_ld = pcall(require, "material")
+-- local material_deep_ocean_ld_ok, material_deep_ocean_ld = pcall(require, "material")
+-- local material_darker_ls_ok, material_darker_ls = pcall(require, "material")
+-- local material_lighter_ls_ok, material_lighter_ls = pcall(require, "material")
+-- local material_oceanic_ls_ok, material_oceanic_ls = pcall(require, "material")
+-- local material_palenight_ls_ok, material_palenight_ls = pcall(require, "material")
+-- local material_deep_ocean_ls_ok, material_deep_ocean_ls = pcall(require, "material")
+-- local moonfly_ok, moonfly = pcall(require, "moonfly")
+-- local blue_moon_ok, blue_moon = pcall(require, "blue-moon")
+-- local zephyr_ok, zephyr = pcall(require, "zephyr")
+-- local boo_ok, boo = pcall(require, "boo-colorscheme")
+-- local boo_sunset_cloud_ok, boo_sunset_cloud = pcall(require, "boo-colorscheme")
+-- local boo_rw_ok, boo_rw = pcall(require, "boo-colorscheme")
+-- local boo_fs_ok, boo_fs = pcall(require, "boo-colorscheme")
+-- local boo_cm_ok, boo_cm = pcall(require, "boo-colorscheme")
+-- local nvim_hybrid_ok, nvim_hybrid = pcall(require, "hybrid")
+-- local space_nvim_ok, space_nvim = pcall(require, "space-nvim")
+-- local omni_ok, omni = pcall(require, "omni")
+-- local aurora_ok, aurora = pcall(require, "aurora")
+local starry_moonlight_ok, starry_moonlight = pcall(require, "starry")
+local starry_dracula_ok, starry_dracula = pcall(require, "starry")
+local starry_oceanic_ok, starry_oceanic = pcall(require, "starry")
+local starry_db_ok, starry_db = pcall(require, "starry")
+local starry_do_ok, starry_do = pcall(require, "starry")
+local starry_darker_ok, starry_darker = pcall(require, "starry")
+local starry_palenight_ok, starry_palenight = pcall(require, "starry")
+local starry_monokai_ok, starry_monokai = pcall(require, "starry")
+local starry_mariana_ok, starry_mariana = pcall(require, "starry")
+local starry_emerald_ok, starry_emerald = pcall(require, "starry")
+local starry_mnb_ok, starry_mnb = pcall(require, "starry")
 
 if not rosepine_main_ok then
   rosepine_main = nil
@@ -408,4 +447,343 @@ if not embark_ok then
 end
 if embark then
 	vim.cmd.colorscheme("embark")
+end
+
+if not witch_ok then
+  witch = nil
+end
+if witch then
+  witch.setup({
+    dim_inactive = {
+      enabled = false,
+    }
+  })
+end
+
+if not abscs_ok then
+  abscs = nil
+end
+if abscs then
+  vim.cmd.colorscheme("abscs")
+end
+
+if not neon_default_ok then
+  neon_default = nil
+end
+if neon_default then
+  vim.g.neon_style = "default"
+  vim.cmd.colorscheme("neon")
+end
+
+if not neon_dark_ok then
+  neon_dark = nil
+end
+if neon_dark then
+  vim.g.neon_style = "dark"
+  vim.cmd.colorscheme("neon")
+end
+
+if not vscode_ok then
+  vscode = nil
+end
+if vscode then
+  vscode.setup()
+  vscode.load()
+end
+
+if not visual_studio_code_ok then
+  visual_studio_code = nil
+end
+if visual_studio_code then
+  vim.cmd.colorscheme("visual_studio_code")
+end
+
+if not material_darker_ld_ok then
+  material_darker_ld = nil
+end
+if material_darker_ld then
+  vim.g.material_style = "darker"
+  material_deep_ocean_ld.setup({
+    plugins = {
+      "gitsigns",
+      "indent-blankline",
+      "nvim-cmp",
+      "nvim-web-devicons",
+      "telescope",
+      "trouble"
+    },
+    lualine_style = "default",
+  })
+  vim.cmd.colorscheme("material")
+end
+
+if not material_lighter_ld_ok then
+  material_lighter_ld = nil
+end
+if material_lighter_ld then
+  vim.g.material_style = "lighter"
+  material_deep_ocean_ld.setup({
+    plugins = {
+      "gitsigns",
+      "indent-blankline",
+      "nvim-cmp",
+      "nvim-web-devicons",
+      "telescope",
+      "trouble"
+    },
+    lualine_style = "default",
+  })
+  vim.cmd.colorscheme("material")
+end
+
+if not material_oceanic_ld_ok then
+  material_oceanic_ld = nil
+end
+if material_oceanic_ld then
+  vim.g.material_style = "oceanic"
+  material_deep_ocean_ld.setup({
+    plugins = {
+      "gitsigns",
+      "indent-blankline",
+      "nvim-cmp",
+      "nvim-web-devicons",
+      "telescope",
+      "trouble"
+    },
+    lualine_style = "default",
+  })
+  vim.cmd.colorscheme("material")
+end
+
+if not material_palenight_ld_ok then
+  material_palenight_ld = nil
+end
+if material_palenight_ld then
+  vim.g.material_style = "palenight"
+  material_deep_ocean_ld.setup({
+    plugins = {
+      "gitsigns",
+      "indent-blankline",
+      "nvim-cmp",
+      "nvim-web-devicons",
+      "telescope",
+      "trouble"
+    },
+    lualine_style = "default",
+  })
+  vim.cmd.colorscheme("material")
+end
+
+if not material_deep_ocean_ld_ok then
+  material_deep_ocean_ld = nil
+end
+if material_deep_ocean_ld then
+  vim.g.material_style = "deep ocean"
+  material_deep_ocean_ld.setup({
+    plugins = {
+      "gitsigns",
+      "indent-blankline",
+      "nvim-cmp",
+      "nvim-web-devicons",
+      "telescope",
+      "trouble"
+    },
+    lualine_style = "default",
+  })
+  vim.cmd.colorscheme("material")
+end
+
+if not material_darker_ls_ok then
+  material_darker_ls = nil
+end
+if material_darker_ls then
+  vim.g.material_style = "darker"
+  material_deep_ocean_ls.setup({
+    plugins = {
+      "gitsigns",
+      "indent-blankline",
+      "nvim-cmp",
+      "nvim-web-devicons",
+      "telescope",
+      "trouble"
+    },
+    lualine_style = "stealth",
+  })
+  vim.cmd.colorscheme("material")
+end
+
+if not material_lighter_ls_ok then
+  material_lighter_ls = nil
+end
+if material_lighter_ls then
+  vim.g.material_style = "lighter"
+  material_deep_ocean_ls.setup({
+    plugins = {
+      "gitsigns",
+      "indent-blankline",
+      "nvim-cmp",
+      "nvim-web-devicons",
+      "telescope",
+      "trouble"
+    },
+    lualine_style = "stealth",
+  })
+  vim.cmd.colorscheme("material")
+end
+
+if not material_oceanic_ls_ok then
+  material_oceanic_ls = nil
+end
+if material_oceanic_ls then
+  vim.g.material_style = "oceanic"
+  material_deep_ocean_ls.setup({
+    plugins = {
+      "gitsigns",
+      "indent-blankline",
+      "nvim-cmp",
+      "nvim-web-devicons",
+      "telescope",
+      "trouble"
+    },
+    lualine_style = "stealth",
+  })
+  vim.cmd.colorscheme("material")
+end
+
+if not material_palenight_ls_ok then
+  material_palenight_ls = nil
+end
+if material_palenight_ls then
+  vim.g.material_style = "palenight"
+  material_deep_ocean_ls.setup({
+    plugins = {
+      "gitsigns",
+      "indent-blankline",
+      "nvim-cmp",
+      "nvim-web-devicons",
+      "telescope",
+      "trouble"
+    },
+    lualine_style = "stealth",
+  })
+  vim.cmd.colorscheme("material")
+end
+
+if not material_deep_ocean_ls_ok then
+  material_deep_ocean_ls = nil
+end
+if material_deep_ocean_ls then
+  vim.g.material_style = "deep ocean"
+  material_deep_ocean_ls.setup({
+    plugins = {
+      "gitsigns",
+      "indent-blankline",
+      "nvim-cmp",
+      "nvim-web-devicons",
+      "telescope",
+      "trouble"
+    },
+    lualine_style = "stealth",
+  })
+  vim.cmd.colorscheme("material")
+end
+
+if not moonfly_ok then
+  moonfly = nil
+end
+if moonfly then
+  vim.cmd.colorscheme("moonfly")
+end
+
+if not blue_moon_ok then
+  blue_moon = nil
+end
+if blue_moon then
+  vim.cmd.colorscheme("blue-moon")
+end
+
+if not zephyr_ok then
+  zephyr = nil
+end
+if zephyr then
+  vim.cmd.colorscheme("zephyr")
+end
+
+if not boo_ok then
+  boo = nil
+end
+if boo then
+  vim.cmd.colorscheme("boo")
+end
+
+if not boo_sunset_cloud_ok then
+  boo_sunset_cloud = nil
+end
+if boo_sunset_cloud then
+  boo_sunset_cloud.use({
+    theme = "sunset_cloud"
+  })
+end
+
+if not boo_rw_ok then
+  boo_rw = nil
+end
+if boo_rw then
+  boo_rw.use({
+    theme = "radioactive_waste"
+  })
+end
+
+if not boo_fs_ok then
+  boo_fs = nil
+end
+if boo_fs then
+  boo_fs.use({
+    theme = "forest_stream"
+  })
+end
+
+if not boo_cm_ok then
+  boo_cm = nil
+end
+if boo_cm then
+  boo_cm.use({
+    theme = "crimson_moonlight"
+  })
+end
+
+if not nvim_hybrid_ok then
+  nvim_hybrid = nil
+end
+if nvim_hybrid then
+  nvim_hybrid.setup()
+end
+
+if not space_nvim_ok then
+  space_nvim = nil
+end
+if space_nvim then
+  vim.cmd.colorscheme("space-nvim")
+end
+
+if not omni_ok then
+  omni = nil
+end
+if omni then
+  vim.cmd.colorscheme("omni")
+end
+
+if not aurora_ok then
+  aurora = nil
+end
+if aurora then
+  vim.cmd.colorscheme("aurora")
+end
+
+if not starry_moonlight_ok then
+  starry_moonlight = nil
+end
+if starry_moonlight then
+  starry_moonlight.setup()
+  vim.cmd.colorscheme("moonlight")
 end

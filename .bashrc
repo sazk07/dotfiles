@@ -132,7 +132,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 alias rspd='rclone sync --progress --drive-acknowledge-abuse --exclude="**/node_modules/**"'
-alias sll='eza -las=accessed --time-style=long-iso'
+alias sl='eza -las=accessed --time-style=long-iso'
 alias sla='eza -a'
 
 export NVM_DIR="$HOME/.nvm"

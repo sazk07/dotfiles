@@ -43,7 +43,6 @@
 -- local tokyonight_storm_ok, tokyonight_storm = pcall(require, "tokyonight")
 -- local tokyonight_moon_ok, tokyonight_moon = pcall(require, "tokyonight")
 -- local tokyonight_day_ok, tokyonight_day = pcall(require, "tokyonight")
--- local embark_ok, embark = pcall(require, "embark")
 -- local witch_ok, witch = pcall(require, "witch")
 -- local abscs_ok, abscs = pcall(require, "abscs")
 -- local neon_default_ok, neon_default = pcall(require, "neon")
@@ -70,10 +69,10 @@
 -- local boo_cm_ok, boo_cm = pcall(require, "boo-colorscheme")
 -- local nvim_hybrid_ok, nvim_hybrid = pcall(require, "hybrid")
 -- local space_nvim_ok, space_nvim = pcall(require, "space-nvim")
-local omni_ok, omni = pcall(require, "omni")
+-- local omni_ok, omni = pcall(require, "omni")
 -- local aurora_ok, aurora = pcall(require, "aurora")
 -- local starry_moonlight_ok, starry_moonlight = pcall(require, "starry")
--- local starry_dracula_ok, starry_dracula = pcall(require, "starry")
+local starry_dracula_ok, starry_dracula = pcall(require, "starry")
 -- local starry_oceanic_ok, starry_oceanic = pcall(require, "starry")
 -- local starry_db_ok, starry_db = pcall(require, "starry")
 -- local starry_do_ok, starry_do = pcall(require, "starry")
@@ -496,13 +495,6 @@ if tokyonight_day then
 		style = "day",
 	})
 	vim.cmd.colorscheme("tokyonight")
-end
-
-if not embark_ok then
-	embark = nil
-end
-if embark then
-	vim.cmd.colorscheme("embark")
 end
 
 if not witch_ok then

@@ -233,7 +233,7 @@ local ok, start = pcall(function()
 		end,
 	})
 	vim.diagnostic.config({
-		virtual_text = true,
+		virtual_text = false,
 	})
 end)
 

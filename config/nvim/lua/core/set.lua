@@ -56,6 +56,12 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	command = ":%s/\\s\\+$//e",
 })
 
+-- Don't auto commenting new lines
+vim.api.nvim_create_autocmd('BufEnter', {
+  pattern = '',
+  command = 'set fo-=c fo-=r fo-=o'
+})
+
 -- Disable line length marker
 vim.api.nvim_create_augroup("setLineLength", { clear = true })
 vim.api.nvim_create_autocmd("Filetype", {

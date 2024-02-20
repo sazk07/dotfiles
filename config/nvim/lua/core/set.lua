@@ -74,7 +74,7 @@ vim.api.nvim_create_autocmd("Filetype", {
 vim.api.nvim_create_augroup("setIndent", { clear = true })
 vim.api.nvim_create_autocmd("Filetype", {
 	group = "setIndent",
-	pattern = { "python", "rust", "go", "nim", "javascript" },
+	pattern = { "python", "rust", "go", "nim" },
 	command = "setlocal shiftwidth=4 tabstop=4 softtabstop=4 smartindent expandtab",
 })
 

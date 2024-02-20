@@ -7,10 +7,10 @@
 [init]
 	defaultBranch = main
 [credential "https://github.com"]
-	helper = 
+	helper =
 	helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
+	helper =
 	helper = !/usr/bin/gh auth git-credential
 [alias]
-	logoag = log --oneline --all --graph
+	logago = log --oneline --all --graph

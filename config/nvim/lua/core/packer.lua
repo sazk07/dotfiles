@@ -304,7 +304,6 @@ return require("packer").startup(function(use)
 		"maxmx03/fluoromachine.nvim",
 		"sontungexpt/witch",
 		"Abstract-IDE/Abstract-cs",
-		"rafamadriz/neon",
 		"Mofiqul/vscode.nvim",
 		"askfiy/visual_studio_code",
 		"marko-cerovac/material.nvim",
@@ -313,7 +312,6 @@ return require("packer").startup(function(use)
 		"kyazdani42/blue-moon",
 		"glepnir/zephyr-nvim",
 		"rockerBOO/boo-colorscheme-nvim",
-		"PHSix/nvim-hybrid",
 		"Th3Whit3Wolf/space-nvim",
 		"yonlu/omni.vim",
 		"ray-x/aurora",
@@ -354,6 +352,6 @@ return require("packer").startup(function(use)
 		"miikanissi/modus-themes.nvim",
 		"alexmozaidze/palenight.nvim",
 		"scottmckendry/cyberdream.nvim",
-		"HoNamDuong/hybrid.nvim",
+		 "HoNamDuong/hybrid.nvim",
 	})
 end)

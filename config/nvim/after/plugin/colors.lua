@@ -45,15 +45,13 @@
 -- local tokyonight_day_ok, tokyonight_day = pcall(require, "tokyonight")
 -- local witch_ok, witch = pcall(require, "witch")
 -- local abscs_ok, abscs = pcall(require, "abscs")
--- local neon_default_ok, neon_default = pcall(require, "neon")
--- local neon_dark_ok, neon_dark = pcall(require, "neon")
 -- local vscode_ok, vscode = pcall(require, "vscode")
 -- local vs_code_ok, vs_code = pcall(require, "visual_studio_code")
 -- local material_darker_ld_ok, material_darker_ld = pcall(require, "material")
 -- local material_lighter_ld_ok, material_lighter_ld = pcall(require, "material")
 -- local material_oceanic_ld_ok, material_oceanic_ld = pcall(require, "material")
 -- local material_palenight_ld_ok, material_palenight_ld = pcall(require, "material")
-local material_deep_ocean_ld_ok, material_deep_ocean_ld = pcall(require, "material")
+-- local material_deep_ocean_ld_ok, material_deep_ocean_ld = pcall(require, "material")
 -- local material_darker_ls_ok, material_darker_ls = pcall(require, "material")
 -- local material_lighter_ls_ok, material_lighter_ls = pcall(require, "material")
 -- local material_oceanic_ls_ok, material_oceanic_ls = pcall(require, "material")
@@ -67,7 +65,6 @@ local material_deep_ocean_ld_ok, material_deep_ocean_ld = pcall(require, "materi
 -- local boo_rw_ok, boo_rw = pcall(require, "boo-colorscheme")
 -- local boo_fs_ok, boo_fs = pcall(require, "boo-colorscheme")
 -- local boo_cm_ok, boo_cm = pcall(require, "boo-colorscheme")
--- local nvim_hybrid_ok, nvim_hybrid = pcall(require, "hybrid")
 -- local space_nvim_ok, space_nvim = pcall(require, "space-nvim")
 -- local omni_ok, omni = pcall(require, "omni")
 -- local aurora_ok, aurora = pcall(require, "aurora")
@@ -123,7 +120,7 @@ local material_deep_ocean_ld_ok, material_deep_ocean_ld = pcall(require, "materi
 -- local sherbet_ok, sherbet = pcall(require, "sherbet")
 -- local poimandres_ok, poimandres = pcall(require, "poimandres")
 -- local mellow_ok, mellow = pcall(require, "mellow")
--- local ohlucy_ok, ohlucy = pcall(require, "oh-lucy")
+local ohlucy_ok, ohlucy = pcall(require, "oh-lucy")
 -- local ohlucy_evening_ok, ohlucy_evening = pcall(require, "oh-lucy")
 -- local midnight_ok, midnight = pcall(require, "midnight")
 -- local darkflat_ok, darkflat = pcall(require, "dark_flat")
@@ -515,22 +512,6 @@ if abscs then
 	vim.cmd.colorscheme("abscs")
 end
 
-if not neon_default_ok then
-	neon_default = nil
-end
-if neon_default then
-	vim.g.neon_style = "default"
-	vim.cmd.colorscheme("neon")
-end
-
-if not neon_dark_ok then
-	neon_dark = nil
-end
-if neon_dark then
-	vim.g.neon_style = "dark"
-	vim.cmd.colorscheme("neon")
-end
-
 if not vscode_ok then
 	vscode = nil
 end
@@ -798,13 +779,6 @@ if boo_cm then
 	boo_cm.use({
 		theme = "crimson_moonlight",
 	})
-end
-
-if not nvim_hybrid_ok then
-	nvim_hybrid = nil
-end
-if nvim_hybrid then
-	nvim_hybrid.setup()
 end
 
 if not space_nvim_ok then

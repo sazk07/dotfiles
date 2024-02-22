@@ -52,7 +52,7 @@
 -- local material_oceanic_ld_ok, material_oceanic_ld = pcall(require, "material")
 -- local material_palenight_ld_ok, material_palenight_ld = pcall(require, "material")
 -- local material_deep_ocean_ld_ok, material_deep_ocean_ld = pcall(require, "material")
--- local material_darker_ls_ok, material_darker_ls = pcall(require, "material")
+local material_darker_ls_ok, material_darker_ls = pcall(require, "material")
 -- local material_lighter_ls_ok, material_lighter_ls = pcall(require, "material")
 -- local material_oceanic_ls_ok, material_oceanic_ls = pcall(require, "material")
 -- local material_palenight_ls_ok, material_palenight_ls = pcall(require, "material")
@@ -84,7 +84,6 @@
 -- local falcon_ok, falcon = pcall(require, "falcon")
 -- local moonlight_ok, moonlight = pcall(require, "moonlight")
 -- local doom_one_ok, doom_one = pcall(require, "doom-one")
--- local dracula_vim_ok, dracula_vim = pcall(require, "dracula")
 -- local calvera_ok, calvera = pcall(require, "calvera")
 -- local vn_night_ok, vn_night = pcall(require, "vn-night")
 -- local codeschool_ok, codeschool = pcall(require, "codeschool")
@@ -120,7 +119,7 @@
 -- local sherbet_ok, sherbet = pcall(require, "sherbet")
 -- local poimandres_ok, poimandres = pcall(require, "poimandres")
 -- local mellow_ok, mellow = pcall(require, "mellow")
-local ohlucy_ok, ohlucy = pcall(require, "oh-lucy")
+-- local ohlucy_ok, ohlucy = pcall(require, "oh-lucy")
 -- local ohlucy_evening_ok, ohlucy_evening = pcall(require, "oh-lucy")
 -- local midnight_ok, midnight = pcall(require, "midnight")
 -- local darkflat_ok, darkflat = pcall(require, "dark_flat")
@@ -971,13 +970,6 @@ if not doom_one_ok then
 end
 if doom_one then
 	vim.cmd.colorscheme("doom-one")
-end
-
-if not dracula_vim_ok then
-	dracula_vim = nil
-end
-if dracula_vim then
-	vim.cmd.colorscheme("dracula")
 end
 
 if not calvera_ok then

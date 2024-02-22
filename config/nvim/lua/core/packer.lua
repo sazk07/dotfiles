@@ -320,7 +320,6 @@ return require("packer").startup(function(use)
 		"fenetikm/falcon",
 		"shaunsingh/moonlight.nvim",
 		"NTBBloodbath/doom-one.nvim",
-		{ "dracula/vim", as = "dracula" },
 		"yashguptaz/calvera-dark.nvim",
 		"nxvu699134/vn-night.nvim",
 		{ "adisen99/codeschool.nvim", requires = { "rktjmp/lush.nvim" } },

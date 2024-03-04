@@ -240,15 +240,8 @@ return require("packer").startup(function(use)
 	})
 
 	use({
-		"ggandor/flit.nvim",
-		requires = {
-			"ggandor/leap.nvim",
-			"tpope/vim-repeat",
-		},
+		"tpope/vim-repeat",
 		event = "VimEnter",
-		config = function()
-			require("custom.flit")
-		end,
 	})
 
 	use({

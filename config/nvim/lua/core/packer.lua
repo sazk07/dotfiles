@@ -253,20 +253,18 @@ return require("packer").startup(function(use)
 	})
 
 	use({
-		"iamcco/markdown-preview.nvim",
-		run = "cd app && npm install",
-		setup = function()
-			vim.g.mkdp_filetypes = { "markdown" }
-		end,
-		ft = { "markdown" },
-		cmd = { "MarkdownPreview", "MarkdownPreviewStop", "MarkdownPreviewToggle" },
-	})
-
-	use({
 		"kosayoda/nvim-lightbulb",
 		event = "BufReadPost",
 		config = function()
 			require("custom.nvim-lightbulb")
+		end,
+	})
+
+	use({
+		"toppair/peek.nvim",
+		run = "deno task --quiet build:fast",
+		config = function()
+			require("custom.peek")
 		end,
 	})
 
@@ -344,6 +342,6 @@ return require("packer").startup(function(use)
 		"miikanissi/modus-themes.nvim",
 		"alexmozaidze/palenight.nvim",
 		"scottmckendry/cyberdream.nvim",
-		 "HoNamDuong/hybrid.nvim",
+		"HoNamDuong/hybrid.nvim",
 	})
 end)

@@ -157,14 +157,14 @@ local ok, start = pcall(function()
 		desc = "start debugger",
 	})
 	vim.keymap.set("n", "<F9>", function()
-		dap.step_over()
-	end, {
-		desc = "step over",
-	})
-	vim.keymap.set("n", "<F10>", function()
 		dap.step_into()
 	end, {
 		desc = "step into",
+	})
+	vim.keymap.set("n", "<F10>", function()
+		dap.step_over()
+	end, {
+		desc = "step over",
 	})
 	vim.keymap.set("n", "<F12>", function()
 		dap.step_out()

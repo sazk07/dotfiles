@@ -116,6 +116,7 @@ return require("packer").startup(function(use)
 		"rcarriga/nvim-dap-ui",
 		requires = {
 			"mfussenegger/nvim-dap",
+			"nvim-neotest/nvim-nio",
 			"theHamsta/nvim-dap-virtual-text",
 			"jay-babu/mason-nvim-dap.nvim",
 			"mfussenegger/nvim-dap-python", -- requires debugpy from Mason

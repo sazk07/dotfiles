@@ -30,7 +30,6 @@ return require("packer").startup(function(use)
 			},
 		},
 		{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
-		"barrett-ruth/telescope-http.nvim",
 		"nvim-telescope/telescope-dap.nvim",
 	})
 
@@ -253,13 +252,13 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	use({
-		"kosayoda/nvim-lightbulb",
-		event = "BufReadPost",
-		config = function()
-			require("custom.nvim-lightbulb")
-		end,
-	})
+	-- use({
+	-- 	"kosayoda/nvim-lightbulb",
+	-- 	event = "BufReadPost",
+	-- 	config = function()
+	-- 		require("custom.nvim-lightbulb")
+	-- 	end,
+	-- })
 
 	use({
 		"toppair/peek.nvim",

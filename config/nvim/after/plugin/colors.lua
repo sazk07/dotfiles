@@ -32,7 +32,7 @@
 -- local eva01_ok, eva01 = pcall(require, "eva01")
 -- local eva01_lcl_ok, eva01_lcl = pcall(require, "eva01")
 -- local astrotheme_ok, astrotheme = pcall(require, "astrotheme")
--- local dracula_ok, dracula = pcall(require, "dracula")
+local dracula_ok, dracula = pcall(require, "dracula")
 -- local dracula_soft_ok, dracula_soft = pcall(require, "dracula")
 -- local nightfox_nf_ok, nightfox_nf = pcall(require, "nightfox")
 -- local nightfox_cf_ok, nightfox_cf = pcall(require, "nightfox")
@@ -47,7 +47,7 @@
 -- local abscs_ok, abscs = pcall(require, "abscs")
 -- local vscode_ok, vscode = pcall(require, "vscode")
 -- local vs_code_ok, vs_code = pcall(require, "visual_studio_code")
-local material_darker_ld_ok, material_darker_ld = pcall(require, "material")
+-- local material_darker_ld_ok, material_darker_ld = pcall(require, "material")
 -- local material_lighter_ld_ok, material_lighter_ld = pcall(require, "material")
 -- local material_oceanic_ld_ok, material_oceanic_ld = pcall(require, "material")
 -- local material_palenight_ld_ok, material_palenight_ld = pcall(require, "material")
@@ -300,7 +300,7 @@ if not nordic_ok then
 end
 if nordic then
 	-- nordic.load()
-  vim.cmd.colorscheme("nordic")
+	vim.cmd.colorscheme("nordic")
 end
 
 if not kanagawa_wave_ok then
@@ -806,10 +806,10 @@ if not starry_moonlight_ok then
 end
 if starry_moonlight then
 	starry_moonlight.setup({
-    style = {
-      name = "moonlight"
-    }
-  })
+		style = {
+			name = "moonlight",
+		},
+	})
 	vim.cmd.colorscheme("starry")
 end
 
@@ -934,28 +934,28 @@ if starry_mnb then
 end
 
 if not ofirkai_ok then
-  ofirkai = nil
+	ofirkai = nil
 end
 if ofirkai then
-  ofirkai.setup({
-    theme = nil
-  })
+	ofirkai.setup({
+		theme = nil,
+	})
 end
 
 if not ofirkai_db_ok then
-  ofirkai_db = nil
+	ofirkai_db = nil
 end
 if ofirkai_db then
-  ofirkai_db.setup({
-    theme = "dark_blue"
-  })
+	ofirkai_db.setup({
+		theme = "dark_blue",
+	})
 end
 
 if not falcon_ok then
-  falcon = nil
+	falcon = nil
 end
 if falcon then
-  vim.cmd.colorscheme("falcon")
+	vim.cmd.colorscheme("falcon")
 end
 
 if not moonlight_ok then
@@ -1152,7 +1152,7 @@ if not melli_ok then
 end
 if melli then
 	melli.setup({
-		color_set = "mellifluous"
+		color_set = "mellifluous",
 	})
 	vim.cmd.colorscheme("mellifluous")
 end
@@ -1162,7 +1162,7 @@ if not alduin_ok then
 end
 if alduin then
 	alduin.setup({
-		color_set = "alduin"
+		color_set = "alduin",
 	})
 	vim.cmd.colorscheme("mellifluous")
 end
@@ -1172,7 +1172,7 @@ if not mountain_ok then
 end
 if mountain then
 	mountain.setup({
-		color_set = "mountain"
+		color_set = "mountain",
 	})
 	vim.cmd.colorscheme("mellifluous")
 end
@@ -1182,7 +1182,7 @@ if not tender_ok then
 end
 if tender then
 	tender.setup({
-		color_set = "tender"
+		color_set = "tender",
 	})
 	vim.cmd.colorscheme("mellifluous")
 end
@@ -1269,7 +1269,7 @@ if not nightcity_afterlife_ok then
 end
 if nightcity_afterlife then
 	nightcity_afterlife.setup({
-		style = "afterlife"
+		style = "afterlife",
 	})
 	vim.cmd.colorscheme("nightcity")
 end
@@ -1279,7 +1279,7 @@ if not nightcity_kabuki_ok then
 end
 if nightcity_kabuki then
 	nightcity_kabuki.setup({
-		style = "kabuki"
+		style = "kabuki",
 	})
 	vim.cmd.colorscheme("nightcity")
 end

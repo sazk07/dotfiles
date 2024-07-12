@@ -43,8 +43,7 @@ exec konsole -e /usr/bin/tmux
 exec firefox
 assign [class="(?i)firefox"] 2
 for_window [title="(?i)learn\ c++"] move to workspace 1
-
-exec discord
+for_window [title="(?i)discord"] move to workspace 1
 
 exec thunar
 assign [class="(?i)thunar"] 3

@@ -50,7 +50,7 @@ for_window [title="(?i)discord"] move to workspace 1
 exec thunar
 assign [class="(?i)thunar"] 3
 
-exec "flatpak run io.gitlab.librewolf-community"
+exec "librewolf"
 assign [class="(?i)librewolf"] 3
 
 exec "codium ~/unodrive/notes_using_dendron/docs/dendron.code-workspace"

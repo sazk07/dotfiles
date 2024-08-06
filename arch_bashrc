@@ -14,8 +14,6 @@ PS1='[\u@\h \W]\$ '
 alias rspd='rclone sync --progress --drive-acknowledge-abuse --exclude="**/node_modules/**" --exclude="**/vendor/**"'
 alias sl='eza -las=created'
 alias sla='eza -a'
-## nvim
-source /usr/share/nvm/init-nvm.sh
 
 # making neovim the default
 export VISUAL=nvim
@@ -34,7 +32,9 @@ mkdircd() {
 
 # add config command for dotfiles
 alias config='/usr/bin/git --git-dir=/home/sazk/.cfg/ --work-tree=/home/sazk'
-. "$HOME/.cargo/env"
 
-## enable git completion
+# enable git completion
 source /usr/share/bash-completion/completions/git
+
+# source node version manager
+source /usr/share/nvm/init-nvm.sh

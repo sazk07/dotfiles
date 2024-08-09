@@ -58,6 +58,9 @@ assign [class="(?i)codium"] 4
 
 exec i3-sensible-terminal -e /usr/bin/tmux
 
+exec virt-manager
+assign [class="(?i)virt-manager"] 5
+
 ## Screenshots
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date +%s)"
 bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date +%s)"

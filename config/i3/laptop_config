@@ -40,7 +40,7 @@ exec xset s off
 
 exec xset -dpms
 
-exec konsole -e /usr/bin/tmux
+exec i3-sensible-terminal -e /usr/bin/tmux
 
 exec "setxkbmap orpw"
 

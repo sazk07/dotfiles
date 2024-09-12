@@ -53,7 +53,7 @@ assign [class="(?i)thunar"] 3
 exec "librewolf"
 assign [class="(?i)librewolf"] 3
 
-exec "codium ~/unodrive/notes_using_dendron/docs/dendron.code-workspace"
+exec "codium ~/Documents/unodrive/notes_using_dendron/docs/dendron.code-workspace"
 assign [class="(?i)codium"] 4
 
 exec i3-sensible-terminal -e /usr/bin/tmux

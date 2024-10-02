@@ -16,7 +16,7 @@ local ok, start = pcall(function()
 
 	mason_lspconfig.setup({
 		ensure_installed = {
-			"astro",
+			-- "astro",
 			"bashls",
 			"clangd",
 			"cssls",
@@ -30,9 +30,10 @@ local ok, start = pcall(function()
 			"neocmake",
 			"pyright",
 			"sqlls",
-			"svelte",
+			-- "svelte",
 			"tailwindcss",
-			"volar",
+			"ts_ls",
+			-- "volar",
 			"yamlls",
 		},
 	})

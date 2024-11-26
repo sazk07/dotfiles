@@ -5,9 +5,6 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "move selection down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "move selection up" })
 
 vim.keymap.set("n", "J", "mzJ`z", { desc = "join above to cursor with cursor in place" })
-vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "<C-d> and zz" })
-vim.keymap.set("n", "<C-f>", "<C-f>zz", { desc = "<C-f> and zz" })
-vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "<C-u> and zz" })
 vim.keymap.set("n", "n", "nzzzv", { desc = "search next and zz" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "search prev and zz" })
 
@@ -57,5 +54,5 @@ vim.keymap.set(
 vim.keymap.set("n", "<leader>o", "o<Esc>0_D", { desc = "insert line below in normal mode" })
 vim.keymap.set("n", "<leader>O", "O<Esc>0_D", { desc = "insert line above in normal mode" })
 
-vim.keymap.set("n", "<leader>tk", "<C-w>t<C-w>K", { desc = "change vertical window to horizontal"})
-vim.keymap.set("n", "<leader>th", "<C-w>t<C-w>H", { desc = "change horizontal window to vertical"})
+vim.keymap.set("n", "<leader>tk", "<C-w>t<C-w>K", { desc = "change vertical window to horizontal" })
+vim.keymap.set("n", "<leader>th", "<C-w>t<C-w>H", { desc = "change horizontal window to vertical" })

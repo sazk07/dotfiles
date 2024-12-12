@@ -39,14 +39,13 @@
 -- local nightfox_nord_ok, nightfox_nord = pcall(require, "nightfox")
 -- local nightfox_dusk_ok, nightfox_dusk = pcall(require, "nightfox")
 -- local fluoromachine_ok, fluoromachine = pcall(require, "fluoromachine")
-local tokyonight_night_ok, tokyonight_night = pcall(require, "tokyonight")
+-- local tokyonight_night_ok, tokyonight_night = pcall(require, "tokyonight")
 -- local tokyonight_storm_ok, tokyonight_storm = pcall(require, "tokyonight")
 -- local tokyonight_moon_ok, tokyonight_moon = pcall(require, "tokyonight")
 -- local tokyonight_day_ok, tokyonight_day = pcall(require, "tokyonight")
 -- local witch_ok, witch = pcall(require, "witch")
 -- local abscs_ok, abscs = pcall(require, "abscs")
 -- local vscode_ok, vscode = pcall(require, "vscode")
--- local vs_code_ok, vs_code = pcall(require, "visual_studio_code")
 -- local material_darker_ld_ok, material_darker_ld = pcall(require, "material")
 -- local material_lighter_ld_ok, material_lighter_ld = pcall(require, "material")
 -- local material_oceanic_ld_ok, material_oceanic_ld = pcall(require, "material")
@@ -114,13 +113,9 @@ local tokyonight_night_ok, tokyonight_night = pcall(require, "tokyonight")
 -- local alduin_ok, alduin = pcall(require, "mellifluous")
 -- local mountain_ok, mountain = pcall(require, "mellifluous")
 -- local tender_ok, tender = pcall(require, "mellifluous")
--- local minimal_ok, minimal = pcall(require, "minimal")
--- local minimalb_ok, minimalb = pcall(require, "minimal")
 -- local sherbet_ok, sherbet = pcall(require, "sherbet")
 -- local poimandres_ok, poimandres = pcall(require, "poimandres")
 -- local mellow_ok, mellow = pcall(require, "mellow")
--- local ohlucy_ok, ohlucy = pcall(require, "oh-lucy")
--- local ohlucy_evening_ok, ohlucy_evening = pcall(require, "oh-lucy")
 -- local midnight_ok, midnight = pcall(require, "midnight")
 -- local darkflat_ok, darkflat = pcall(require, "dark_flat")
 -- local citruszest_ok, citruszest = pcall(require, "citruszest")
@@ -129,7 +124,7 @@ local tokyonight_night_ok, tokyonight_night = pcall(require, "tokyonight")
 -- local nightcity_kabuki_ok, nightcity_kabuki = pcall(require, "nightcity")
 -- local monokai_nightasty_ok, monokai_nightasty = pcall(require, "monokai-nightasty")
 -- local nightowl_ok, nightowl = pcall(require, "night-owl")
--- local modus_ok, modus = pcall(require, "modus-themes")
+local modus_ok, modus = pcall(require, "modus-themes")
 -- local palenight_ok, palenight = pcall(require, "palenight")
 -- local cyberdream_ok, cyberdream = pcall(require, "cyberdream")
 -- local hybrid_ok, hybrid = pcall(require, "hybrid")
@@ -517,13 +512,6 @@ end
 if vscode then
 	vscode.setup()
 	vscode.load()
-end
-
-if not vs_code_ok then
-	vs_code = nil
-end
-if vs_code then
-	vim.cmd.colorscheme("visual_studio_code")
 end
 
 if not material_darker_ld_ok then
@@ -1187,20 +1175,6 @@ if tender then
 	vim.cmd.colorscheme("mellifluous")
 end
 
-if not minimal_ok then
-	minimal = nil
-end
-if minimal then
-	vim.cmd.colorscheme("minimal")
-end
-
-if not minimalb_ok then
-	minimalb = nil
-end
-if minimalb then
-	vim.cmd.colorscheme("minimal-base16")
-end
-
 if not sherbet_ok then
 	sherbet = nil
 end
@@ -1220,20 +1194,6 @@ if not mellow_ok then
 end
 if mellow then
 	vim.cmd.colorscheme("mellow")
-end
-
-if not ohlucy_ok then
-	ohlucy = nil
-end
-if ohlucy then
-	vim.cmd.colorscheme("oh-lucy")
-end
-
-if not ohlucy_evening_ok then
-	ohlucy_evening = nil
-end
-if ohlucy_evening then
-	vim.cmd.colorscheme("oh-lucy-evening")
 end
 
 if not midnight_ok then

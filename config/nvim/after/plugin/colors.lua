@@ -124,9 +124,9 @@
 -- local nightcity_kabuki_ok, nightcity_kabuki = pcall(require, "nightcity")
 -- local monokai_nightasty_ok, monokai_nightasty = pcall(require, "monokai-nightasty")
 -- local nightowl_ok, nightowl = pcall(require, "night-owl")
-local modus_ok, modus = pcall(require, "modus-themes")
+-- local modus_ok, modus = pcall(require, "modus-themes")
 -- local palenight_ok, palenight = pcall(require, "palenight")
--- local cyberdream_ok, cyberdream = pcall(require, "cyberdream")
+local cyberdream_ok, cyberdream = pcall(require, "cyberdream")
 -- local hybrid_ok, hybrid = pcall(require, "hybrid")
 
 if not rosepine_main_ok then

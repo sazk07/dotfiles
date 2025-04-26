@@ -25,7 +25,7 @@ local ok, start = pcall(function()
 			"gopls",
 			"html",
 			"jsonls",
-			"ltex",
+			-- "ltex",
 			"lua_ls",
 			"neocmake",
 			"pyright",
@@ -70,7 +70,23 @@ local ok, start = pcall(function()
 			},
 		},
 	})
-	lspconfig.ltex.setup({
+	-- lspconfig.ltex.setup({
+	-- 	capabilities = capabilities,
+	-- 	filetypes = {
+	-- 		"tex",
+	-- 		"markdown",
+	-- 		"bib",
+	-- 		"gitcommit",
+	-- 		"org",
+	-- 		"rst",
+	-- 		"rnoweb",
+	-- 		"pandoc",
+	-- 		"quarto",
+	-- 		"rmd",
+	-- 		"context",
+	-- 	},
+	-- })
+	lspconfig.ltex_plus.setup({
 		capabilities = capabilities,
 		filetypes = {
 			"tex",

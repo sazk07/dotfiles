@@ -7,15 +7,15 @@ if conform then
 		formatters_by_ft = {
 			lua = { "stylua" },
 			python = { "black", "ruff_format" },
-			javascript = { { "prettier", "prettierd" } },
-			typescript = { { "prettier", "prettierd" } },
+			javascript = {  "prettier", "prettierd"  },
+			typescript = {  "prettier", "prettierd"  },
 			go = { "gofumpt", "goimports_reviser", "golines" },
 			html = { "htmlbeautifier" },
-			markdown = { { "mdformat", "prettier", "prettierd" } },
+			markdown = {  "mdformat", "prettier", "prettierd"  },
 			latex = { "latexindent" },
 			cpp = { "clang_format" },
 			c = { "clang_format" },
-			css = { { "prettier", "prettierd" } }
+			css = {  "prettier", "prettierd"  }
 		},
 		format_on_save = function(bufnr)
 			if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then

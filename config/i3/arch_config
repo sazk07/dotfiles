@@ -40,7 +40,7 @@ exec xset -dpms
 
 exec i3-sensible-terminal -e /usr/bin/tmux
 
-exec "setxkbmap orpw"
+# exec "setxkbmap orpw"
 
 exec firefox
 assign [class="(?i)firefox"] 2

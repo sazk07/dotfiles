@@ -38,35 +38,15 @@ exec xset s off
 
 exec xset -dpms
 
-exec i3-sensible-terminal -e /usr/bin/tmux
-
-exec "setxkbmap orpw"
-
-exec firefox
-assign [class="(?i)firefox"] 2
-for_window [title="(?i)learn\ c++"] move to workspace 1
-for_window [title="(?i)discord"] move to workspace 1
-
-exec thunar
-assign [class="(?i)thunar"] 3
-
-exec "flatpak run io.gitlab.librewolf-community"
-assign [class="(?i)librewolf"] 3
-
-exec "codium ~/unodrive/notes_using_dendron/docs/dendron.code-workspace"
-assign [class="(?i)codium"] 4
-
-exec i3-sensible-terminal -e /usr/bin/tmux
-
-## Screenshots
-bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date +%s)"
-bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date +%s)"
-bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date +%s)"
-
-## Clipboard Screenshots
-bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
-bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+# custom configs
+include ~/dotfiles/config/i3/includes/terminals.conf
+include ~/dotfiles/config/i3/includes/browsers.conf
+include ~/dotfiles/config/i3/includes/editor.conf
+include ~/dotfiles/config/i3/includes/filemanager.conf
+include ~/dotfiles/config/i3/includes/keyboard.conf
+include ~/dotfiles/config/i3/includes/vm.conf
+# Screenshots
+include ~/dotfiles/config/i3/includes/screenshot.conf
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status

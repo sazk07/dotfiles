@@ -1,3 +1,7 @@
+#
+# ~/.bash_aliases
+#
+
 ## alias rclone and eza
 alias rspd='rclone sync --progress --drive-acknowledge-abuse --exclude="**/node_modules/**" --exclude="**/vendor/**"'
 alias sl='eza -las=created'
@@ -22,6 +26,3 @@ mkdircd() {
 
 # enable git completion
 source /usr/share/bash-completion/completions/git
-
-# source node version manager
-source /usr/share/nvm/init-nvm.sh

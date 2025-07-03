@@ -42,3 +42,22 @@ eval "$(pyenv init - bash)"
 
 # neovim env path
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
+# bashrc aliases
+force_color_prompt=yes
+
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'

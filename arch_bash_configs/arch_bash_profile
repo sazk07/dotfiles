@@ -2,7 +2,7 @@
 # ~/.bash_profile
 #
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+[[ -f /home/sazk/.bashrc ]] && . /home/sazk/.bashrc
 
 if [[ "$(tty)" = "/dev/tty1" ]]; then
 	pgrep i3 || startx "/home/sazk/.config/X11/xinitrc"

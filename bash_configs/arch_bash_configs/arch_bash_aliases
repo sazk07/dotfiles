@@ -1,0 +1,31 @@
+#
+# ~/.bash_aliases
+#
+
+# alias rclone
+if [ -f ~/dotfiles/bash_configs/includes/rclone_alias ]; then
+  . ~/dotfiles/bash_configs/includes/rclone_alias
+fi
+
+# alias eza
+if [ -f ~/dotfiles/bash_configs/includes/eza_alias ]; then
+  . ~/dotfiles/bash_configs/includes/eza_alias
+fi
+
+# making neovim the default
+if [ -f ~/dotfiles/bash_configs/includes/neovim_default ]; then
+  . ~/dotfiles/bash_configs/includes/neovim_default
+fi
+
+# custom helper functions
+if [ -f ~/dotfiles/bash_configs/includes/helper_functions ]; then
+  . ~/dotfiles/bash_configs/includes/helper_functions
+fi
+
+# enable git completion
+if [ -f ~/dotfiles/bash_configs/includes/git_completion ]; then
+  . ~/dotfiles/bash_configs/includes/git_completion
+fi
+
+# source node version manager
+source /usr/share/nvm/init-nvm.sh

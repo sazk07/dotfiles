@@ -1,0 +1,48 @@
+#
+# ~/.bash_aliases
+#
+
+# custom helper functions
+if [ -f ~/dotfiles/bash_configs/includes/helper_functions ]; then
+	. ~/dotfiles/bash_configs/includes/helper_functions
+fi
+
+# rclone configs
+if [ -f ~/dotfiles/bash_configs/includes/rclone_alias ]; then
+	. ~/dotfiles/bash_configs/includes/rclone_alias
+fi
+
+# eza configs
+if [ -f ~/dotfiles/bash_configs/includes/eza_alias ]; then
+	. ~/dotfiles/bash_configs/includes/eza_alias
+fi
+
+# making neovim the default
+if [ -f ~/dotfiles/bash_configs/includes/neovim_default ]; then
+	. ~/dotfiles/bash_configs/includes/neovim_default
+fi
+
+# add conda to PATH
+if [ -f ~/dotfiles/bash_configs/includes/conda_path ]; then
+	. ~/dotfiles/bash_configs/includes/conda_path
+fi
+
+# add deno dir to PATH
+if [ -f ~/dotfiles/bash_configs/includes/deno_path ]; then
+	. ~/dotfiles/bash_configs/includes/deno_path
+fi
+
+# cargo env path
+if [ -f ~/dotfiles/bash_configs/includes/cargo_path ]; then
+	. ~/dotfiles/bash_configs/includes/cargo_path
+fi
+
+# nvm env path
+if [ -f ~/dotfiles/bash_configs/includes/nvm_path ]; then
+	. ~/dotfiles/bash_configs/includes/nvm_path
+fi
+
+# pyenv env path
+if [ -f ~/dotfiles/bash_configs/includes/pyenv_path ]; then
+	. ~/dotfiles/bash_configs/includes/pyenv_path
+fi

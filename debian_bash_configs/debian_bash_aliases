@@ -2,62 +2,52 @@
 # ~/.bash_aliases
 #
 
-## alias rclone and eza
-alias rspd='rclone sync --progress --drive-acknowledge-abuse --exclude="**/node_modules/**" --exclude="**/vendor/**"'
-alias sl='eza -las=created --time-style=relative'
-alias sla='eza -a'
-alias csl='clear && sl'
-alias csla='clear && sla'
-
-# add git branch info to cli
-git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
-export PS1='[\u@\h] \W $(git_branch)> '
-
-# make dir and cd to it
-mkdircd() {
-  mkdir -p "$@" && cd "$_"
-}
-
-# enable git completion
-source /usr/share/bash-completion/completions/git
-
-# making neovim the default
-export VISUAL=nvim
-export EDITOR="$VISUAL"
-
-# cargo env path
-. "$HOME/.cargo/env"
-
-# nvm env path
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# pyenv env path
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - bash)"
-
-# neovim env path
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
-
-# bashrc aliases
-force_color_prompt=yes
-
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+# custom helper functions
+if [ -f ~/dotfiles/bash_configs/helper_functions ]; then
+	. ~/dotfiles/bash_configs/helper_functions
 fi
 
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
+# custom configs
+if [ -f ~/dotfiles/bash_configs/custom_configs ]; then
+	. ~/dotfiles/bash_configs/custom_configs
+fi
+
+# enable git completion
+if [ -f ~/dotfiles/bash_configs/git_completion ]; then
+	. ~/dotfiles/bash_configs/git_completion
+fi
+
+# rclone configs
+if [ -f ~/dotfiles/bash_configs/rclone_alias ]; then
+	. ~/dotfiles/bash_configs/rclone_alias
+fi
+
+# eza configs
+if [ -f ~/dotfiles/bash_configs/eza_alias ]; then
+	. ~/dotfiles/bash_configs/eza_alias
+fi
+
+# making neovim the default
+if [ -f ~/dotfiles/bash_configs/neovim_default ]; then
+	. ~/dotfiles/bash_configs/neovim_default
+fi
+
+# cargo env path
+if [ -f ~/dotfiles/bash_configs/cargo_path ]; then
+	. ~/dotfiles/bash_configs/cargo_path
+fi
+
+# nvm env path
+if [ -f ~/dotfiles/bash_configs/nvm_path ]; then
+	. ~/dotfiles/bash_configs/nvm_path
+fi
+
+# pyenv env path
+if [ -f ~/dotfiles/bash_configs/pyenv_path ]; then
+	. ~/dotfiles/bash_configs/pyenv_path
+fi
+
+# neovim env path
+if [ -f ~/dotfiles/bash_configs/neovim_path ]; then
+	. ~/dotfiles/bash_configs/neovim_path
+fi

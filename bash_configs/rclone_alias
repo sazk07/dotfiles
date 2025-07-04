@@ -1,0 +1,1 @@
+alias rspd='rclone sync --progress --drive-acknowledge-abuse --exclude="**/node_modules/**" --exclude="**/vendor/**"'

@@ -8,6 +8,12 @@ if [[ "$(tty)" = "/dev/tty1" ]]; then
 	pgrep i3 || startx "/home/sazk/.config/X11/xinitrc"
 fi
 
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - bash)"
+# pyenv env path
+if [ -f ~/dotfiles/bash_configs/includes/pyenv_path ]; then
+	. ~/dotfiles/bash_configs/includes/pyenv_path
+fi
+
+# go env path
+if [ -f ~/dotfiles/bash_configs/includes/go_path ]; then
+	. ~/dotfiles/bash_configs/includes/go_path
+fi

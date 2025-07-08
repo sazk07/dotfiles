@@ -7,9 +7,19 @@ if [ -f ~/dotfiles/bash_configs/includes/helper_functions ]; then
 	. ~/dotfiles/bash_configs/includes/helper_functions
 fi
 
-# custom configs
-if [ -f ~/dotfiles/bash_configs/includes/custom_configs ]; then
-	. ~/dotfiles/bash_configs/includes/custom_configs
+# dircolor configs
+if [ -f ~/dotfiles/bash_configs/includes/dircolor_configs ]; then
+	. ~/dotfiles/bash_configs/includes/dircolor_configs
+fi
+
+# ls aliases
+if [ -f ~/dotfiles/bash_configs/includes/ls_aliases ]; then
+	. ~/dotfiles/bash_configs/includes/ls_aliases
+fi
+
+# color prompt configs
+if [ -f ~/dotfiles/bash_configs/includes/color_prompt_configs ]; then
+	. ~/dotfiles/bash_configs/includes/color_prompt_configs
 fi
 
 # enable git completion

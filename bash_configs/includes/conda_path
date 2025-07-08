@@ -1,14 +1,19 @@
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/sazk/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
+
+if [[ -x "$HOME/miniconda3/bin/conda" ]]; then
+  conda_path="$HOME/miniconda3/bin/conda"
+  __conda_setup="$("$conda_path" shell.bash hook 2>/dev/null)"
+
+  if [[ $? -eq 0 ]]; then
     eval "$__conda_setup"
-else
-    if [ -f "/home/sazk/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/sazk/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/sazk/miniconda3/bin:$PATH"
-    fi
+  elif [[ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]]; then
+    source "$HOME/miniconda3/etc/profile.d/conda.sh"
+  else
+    export PATH="$HOME/miniconda3/bin:$PATH"
+  fi
+
+  unset __conda_setup conda_path
 fi
-unset __conda_setup
+
 # <<< conda initialize <<<

@@ -1,10 +1,14 @@
-# add git branch info to cli
+# Show current Git branch in the prompt (if inside a Git repo)
 git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+  local branch
+  branch=$(git symbolic-ref --short HEAD 2>/dev/null) || return
+  echo "($branch)"
 }
-export PS1='[\u@\h] \W $(git_branch)> '
 
-# make dir and cd to it
+# Set Bash prompt to include Git branch
+export PS1='[\u@\h \W$(git_branch)]\$ '
+
+# Create directory and cd into it
 mkdircd() {
-  mkdir -p "$@" && cd "$_"
+  mkdir -p "$1" && cd "$1"
 }

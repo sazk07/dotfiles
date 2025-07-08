@@ -1,2 +1,8 @@
-export DENO_INSTALL="$HOME/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
+# Initialize Deno if installed
+DENO_INSTALL="$HOME/.deno"
+deno_exe="$DENO_INSTALL/bin/deno"
+
+if [[ -x "$deno_exe" ]]; then
+  export DENO_INSTALL
+  export PATH="$DENO_INSTALL/bin:$PATH"
+fi

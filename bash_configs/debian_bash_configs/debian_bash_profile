@@ -9,11 +9,7 @@ if [[ "$(tty)" = "/dev/tty1" ]]; then
 fi
 
 # pyenv env path
-if [ -f ~/dotfiles/bash_configs/includes/pyenv_path ]; then
-	. ~/dotfiles/bash_configs/includes/pyenv_path
-fi
+source ~/dotfiles/bash_configs/includes/pyenv_path
 
 # go env path
-if [ -f ~/dotfiles/bash_configs/includes/go_path ]; then
-	. ~/dotfiles/bash_configs/includes/go_path
-fi
+source ~/dotfiles/bash_configs/includes/go_path

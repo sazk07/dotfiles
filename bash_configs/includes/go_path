@@ -1,2 +1,6 @@
-# add go path
-export PATH=$PATH:/usr/local/go/bin
+# Add Go to PATH (append) if installed and not already in PATH
+GO_BIN="/usr/local/go/bin"
+
+if [[ -d "$GO_BIN" && ":$PATH:" != *":$GO_BIN:"* ]]; then
+  export PATH="$PATH:$GO_BIN"
+fi

@@ -3,29 +3,19 @@
 #
 
 # alias rclone
-if [ -f ~/dotfiles/bash_configs/includes/rclone_alias ]; then
-  . ~/dotfiles/bash_configs/includes/rclone_alias
-fi
+. ~/dotfiles/bash_configs/includes/rclone_alias
 
 # alias eza
-if [ -f ~/dotfiles/bash_configs/includes/eza_alias ]; then
-  . ~/dotfiles/bash_configs/includes/eza_alias
-fi
+. ~/dotfiles/bash_configs/includes/eza_alias
 
 # making neovim the default
-if [ -f ~/dotfiles/bash_configs/includes/neovim_default ]; then
-  . ~/dotfiles/bash_configs/includes/neovim_default
-fi
+. ~/dotfiles/bash_configs/includes/neovim_default
 
 # custom helper functions
-if [ -f ~/dotfiles/bash_configs/includes/helper_functions ]; then
-  . ~/dotfiles/bash_configs/includes/helper_functions
-fi
+. ~/dotfiles/bash_configs/includes/helper_functions
 
 # enable git completion
-if [ -f ~/dotfiles/bash_configs/includes/git_completion ]; then
-  . ~/dotfiles/bash_configs/includes/git_completion
-fi
+. ~/dotfiles/bash_configs/includes/git_completion
 
 # source node version manager
 source /usr/share/nvm/init-nvm.sh

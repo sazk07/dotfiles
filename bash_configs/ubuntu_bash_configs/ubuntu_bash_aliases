@@ -2,52 +2,22 @@
 # ~/.bash_aliases
 #
 
-# custom helper functions
-if [ -f ~/dotfiles/bash_configs/includes/helper_functions ]; then
-	. ~/dotfiles/bash_configs/includes/helper_functions
-fi
+includes=(
+	helper_functions
+	ls_aliases
+	git_completion
+	rclone_alias
+	eza_alias
+	neovim_path
+	neovim_default
+	cargo_path
+	nvm_path
+	pyenv_path
+	conda_path
+	deno_path
+)
 
-# enable git completion
-if [ -f ~/dotfiles/bash_configs/includes/git_completion ]; then
-	. ~/dotfiles/bash_configs/includes/git_completion
-fi
-
-# rclone configs
-if [ -f ~/dotfiles/bash_configs/includes/rclone_alias ]; then
-	. ~/dotfiles/bash_configs/includes/rclone_alias
-fi
-
-# eza configs
-if [ -f ~/dotfiles/bash_configs/includes/eza_alias ]; then
-	. ~/dotfiles/bash_configs/includes/eza_alias
-fi
-
-# making neovim the default
-if [ -f ~/dotfiles/bash_configs/includes/neovim_default ]; then
-	. ~/dotfiles/bash_configs/includes/neovim_default
-fi
-
-# cargo env path
-if [ -f ~/dotfiles/bash_configs/includes/cargo_path ]; then
-	. ~/dotfiles/bash_configs/includes/cargo_path
-fi
-
-# nvm env path
-if [ -f ~/dotfiles/bash_configs/includes/nvm_path ]; then
-	. ~/dotfiles/bash_configs/includes/nvm_path
-fi
-
-# pyenv env path
-if [ -f ~/dotfiles/bash_configs/includes/pyenv_path ]; then
-	. ~/dotfiles/bash_configs/includes/pyenv_path
-fi
-
-# add conda to PATH
-if [ -f ~/dotfiles/bash_configs/includes/conda_path ]; then
-	. ~/dotfiles/bash_configs/includes/conda_path
-fi
-
-# add deno dir to PATH
-if [ -f ~/dotfiles/bash_configs/includes/deno_path ]; then
-	. ~/dotfiles/bash_configs/includes/deno_path
-fi
+for include in "${includes[@]}"; do
+	config="$HOME/dotfiles/bash_configs/includes/$include"
+	[[ -f "$config" ]] && source "$config
+done

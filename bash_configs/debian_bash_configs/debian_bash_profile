@@ -2,14 +2,35 @@
 # ~/.bash_profile
 #
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
-
-if [[ "$(tty)" = "/dev/tty1" ]]; then
-	pgrep i3 || startx "/home/sazk/.config/X11/xinitrc"
+# Source interactive shell settings if available
+bashrc="$HOME/.bashrc"
+if [[ ! -r "$bashrc" ]]; then
+	printf 'Warning: %q not found or not readable.\n' "$bashrc" >&2
+else
+	source "$bashrc"
 fi
 
-# pyenv env path
-source ~/dotfiles/bash_configs/includes/pyenv_path
+# Start graphical session on tty1 if i3 isn't already running
+if [[ $(tty) == /dev/tty1 ]]; then
+	xinitrc="$HOME/.config/X11/xinitrc"
+	if [[ ! -r "$xinitrc" ]]; then
+		printf 'Warning: %q not found or not readable.\n' "$xinitrc" >&2
+	elif ! pgrep -u "$USER" -x i3 &>/dev/null; then
+		exec startx "$xinitrc"
+	fi
+fi
 
-# go env path
-source ~/dotfiles/bash_configs/includes/go_path
+# Load all Bash configuration includes from dotfiles
+includes=(
+	pyenv_path
+	go_path
+)
+
+for include in "${includes[@]}"; do
+	config="$HOME/dotfiles/bash_configs/includes/$include"
+	if [[ -r "$config" ]]; then
+		source "$config"
+	else
+		printf 'Warning: %q not found or not readable. \n' "$config" >&2
+	fi
+done

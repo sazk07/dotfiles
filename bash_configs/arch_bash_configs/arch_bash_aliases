@@ -2,20 +2,23 @@
 # ~/.bash_aliases
 #
 
-# alias rclone
-. ~/dotfiles/bash_configs/includes/rclone_alias
+# Load all Bash configuration includes from dotfiles
+includes=(
+  rclone_alias
+  eza_alias
+  neovim_default
+  helper_functions
+  git_completion
+)
 
-# alias eza
-. ~/dotfiles/bash_configs/includes/eza_alias
-
-# making neovim the default
-. ~/dotfiles/bash_configs/includes/neovim_default
-
-# custom helper functions
-. ~/dotfiles/bash_configs/includes/helper_functions
-
-# enable git completion
-. ~/dotfiles/bash_configs/includes/git_completion
+for include in "${includes[@]}"; do
+  config="$HOME/dotfiles/bash_configs/includes/$include"
+  if [[ -f "$config" ]]; then
+    source "$config"
+  else
+    printf 'Warning: %q not found or not readable. \n' "$config" >&2
+  fi
+done
 
 # source node version manager
 source /usr/share/nvm/init-nvm.sh

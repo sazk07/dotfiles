@@ -1,4 +1,3 @@
-
 # Enable color prompt if supported
 if command -v tput &>/dev/null && tput setaf 1 &>/dev/null; then
   color_prompt=yes

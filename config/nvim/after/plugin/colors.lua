@@ -89,7 +89,7 @@
 -- local monochrome_ok, monochrome = pcall(require, "monochrome")
 -- local zenbones_ok, zenbones = pcall(require, "zenbones")
 -- local neobones_ok, neobones = pcall(require, "zenbones")
--- local rosebones_ok, rosebones = pcall(require, "zenbones")
+local rosebones_ok, rosebones = pcall(require, "zenbones")
 -- local forestbones_ok, forestbones = pcall(require, "zenbones")
 -- local nordbones_ok, nordbones = pcall(require, "zenbones")
 -- local tokyobones_ok, tokyobones = pcall(require, "zenbones")
@@ -126,7 +126,7 @@
 -- local nightowl_ok, nightowl = pcall(require, "night-owl")
 -- local modus_ok, modus = pcall(require, "modus-themes")
 -- local palenight_ok, palenight = pcall(require, "palenight")
-local cyberdream_ok, cyberdream = pcall(require, "cyberdream")
+-- local cyberdream_ok, cyberdream = pcall(require, "cyberdream")
 -- local hybrid_ok, hybrid = pcall(require, "hybrid")
 
 if not rosepine_main_ok then

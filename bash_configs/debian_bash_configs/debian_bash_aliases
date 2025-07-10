@@ -20,5 +20,9 @@ includes=(
 
 for include in "${includes[@]}"; do
   config="$HOME/dotfiles/bash_configs/includes/$include"
-  [[ -f "$config" ]] && source "$config"
+  if [[ -r "$config" ]]; then
+    source "$config"
+  else
+    printf 'Warning: %q not found or not readable. \n' "$config" >&2
+  fi
 done

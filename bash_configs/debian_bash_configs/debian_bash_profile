@@ -16,7 +16,7 @@ fi
 if [[ $(tty) == /dev/tty1 ]]; then
 	xinitrc="$HOME/.config/X11/xinitrc"
 	if [[ ! -r "$xinitrc" ]]; then
-		printf 'Warning: %q not found or not readable.\n' "$xinitrc" >&2
+		printf 'Error: %q not found or not readable.\n' "$xinitrc" >&2
 	elif [[ ! -s "$xinitrc" ]]; then
 		printf 'Error: %q is empty.\n' "$xinitrc" >&2
 	elif ! pgrep -u "$USER" -x i3 &>/dev/null; then
@@ -33,7 +33,7 @@ includes=(
 for include in "${includes[@]}"; do
 	config="$HOME/dotfiles/bash_configs/includes/$include"
 	if [[ ! -r "$config" ]]; then
-		printf 'Warning: %q not found or not readable. \n' "$config" >&2
+		printf 'Error: %q not found or not readable.\n' "$config" >&2
 	elif [[ ! -s "$config" ]]; then
 		printf 'Error: %q is empty.\n' "$config" >&2
 	else

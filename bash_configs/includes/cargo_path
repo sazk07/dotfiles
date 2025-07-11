@@ -1,6 +1,9 @@
 # Load Cargo environment if env file exists
-CARGO_ENV="$HOME/.cargo/env"
+readonly CARGO_DIR="${HOME}/.cargo"
+readonly CARGO_ENV="${CARGO_DIR}/env"
 
 if [[ -f "$CARGO_ENV" ]]; then
   source "$CARGO_ENV"
+elif [[ -d "$CARGO_DIR/bin" ]]; then
+  export PATH="${CARGO_DIR}/bin:${PATH}"
 fi

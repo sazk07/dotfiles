@@ -9,6 +9,7 @@ includes=(
   neovim_default
   helper_functions
   git_completion
+  cargo_path
 )
 
 for include in "${includes[@]}"; do

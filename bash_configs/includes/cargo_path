@@ -1,6 +1,8 @@
 # Load Cargo environment if env file exists
-declare -r CARGO_DIR="${HOME}/.cargo" 2>/dev/null || CARGO_DIR="${HOME}/.cargo"
-declare -r CARGO_ENV="${CARGO_DIR}/env" 2>/dev/null || CARGO_ENV="${CARGO_DIR}/env"
+if [[ -z "$CARGO_DIR" ]]; then
+    readonly CARGO_DIR="${HOME}/.cargo"
+    readonly CARGO_ENV="${CARGO_DIR}/env"
+fi
 
 # Source the Cargo environment file if it exists, otherwise add bin to PATH
 if [[ -f "$CARGO_ENV" ]]; then

@@ -13,7 +13,7 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
 # Source additional user defined aliases if available
-bash_aliases="$HOME/.bash_aliases"
+bash_aliases="$HOME/.config/bash/bash_aliases"
 if [[ ! -r "$bash_aliases" ]]; then
     printf 'Error: %q not found or not readable.\n' "$bash_aliases" >&2
 elif [[ ! -s "$bash_aliases" ]]; then

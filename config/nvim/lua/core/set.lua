@@ -43,7 +43,7 @@ vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
 	group = "YankHighlight",
 	callback = function()
-		vim.highlight.on_yank({
+		vim.hl.on_yank({
 			higroup = "IncSearch",
 			timeout = "300",
 		})
@@ -133,3 +133,6 @@ vim.g.codeium_disable_bindings = 1
 -- fatih/vim-go settings
 vim.g.go_def_mode = "gopls"
 vim.g.go_info_mode = "gopls"
+
+-- Register markdown as the parser for vimwiki files
+vim.treesitter.language.register("markdown", "vimwiki")

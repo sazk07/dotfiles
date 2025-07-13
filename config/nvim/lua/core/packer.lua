@@ -79,6 +79,7 @@ return require("packer").startup(function(use)
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-cmdline",
+		"petertriho/cmp-git",
 		{
 			"L3MON4D3/LuaSnip",
 			tag = "v2.*",
@@ -267,6 +268,14 @@ return require("packer").startup(function(use)
 			require("custom.peek")
 		end,
 	})
+
+	-- use({
+	-- 	"MeanderingProgrammer/render-markdown.nvim",
+	-- 	after={"nvim-treesitter"},
+	-- 	config = function()
+	-- 		require("custom.render-markdown")
+	-- 	end,
+	-- })
 
 	-- use ({ "ThePrimeagen/harpoon" })
 

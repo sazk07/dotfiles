@@ -36,14 +36,16 @@ vim.keymap.set(
 	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
 	{ desc = "sed on word at cursor" }
 )
+
 -- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "chmod +x current file" })
 
-vim.keymap.set(
-	"n",
-	"<leader>/",
-	'<cmd>lua require("Comment.api").toggle.linewise.current()<CR>',
-	{ desc = "toggle comment out" }
-)
+-- vim.keymap.set(
+-- 	"n",
+-- 	"<leader>/",
+-- 	'<cmd>lua require("Comment.api").toggle.linewise.current()<CR>',
+-- 	{ desc = "toggle comment out" }
+-- )
+
 vim.keymap.set(
 	"v",
 	"<leader>/",

@@ -262,7 +262,7 @@ return require("packer").startup(function(use)
 	-- })
 
 	use({
-		"toppair/peek.nvim",
+		"sazk07/peek.nvim",
 		run = "deno task --quiet build:fast",
 		config = function()
 			require("custom.peek")

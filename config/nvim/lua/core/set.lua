@@ -102,6 +102,16 @@ vim.api.nvim_create_autocmd("BufLeave", {
 	command = "stopinsert",
 })
 
+-- codium custom keybindings
+vim.g.codeium_disable_bindings = 1
+
+-- fatih/vim-go settings
+vim.g.go_def_mode = "gopls"
+vim.g.go_info_mode = "gopls"
+
+-- Register markdown as the parser for vimwiki files
+vim.treesitter.language.register("markdown", "vimwiki")
+
 -- AutoFormat on save settings:
 ---------------------
 
@@ -127,12 +137,3 @@ end, {
 
 -- Disable autoformat on save
 vim.g.disable_autoformat = true
--- codium custom keybindings
-vim.g.codeium_disable_bindings = 1
-
--- fatih/vim-go settings
-vim.g.go_def_mode = "gopls"
-vim.g.go_info_mode = "gopls"
-
--- Register markdown as the parser for vimwiki files
-vim.treesitter.language.register("markdown", "vimwiki")

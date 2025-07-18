@@ -19,9 +19,10 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "delete to void" })
 
 vim.keymap.set("n", "Q", "<nop>", { desc = "disable Q" })
 
--- vim.keymap.set("n", "<leader>f", function()
--- 	vim.lsp.buf.format({ async = true })
--- end, { desc = "format buffer" })
+--[[ vim.keymap.set("n", "<leader>f", function()
+	vim.lsp.buf.format({ async = true })
+end, { desc = "format buffer" })
+]]
 
 vim.keymap.set("n", "<leader>f", "<cmd>Format<CR>", { desc = "format buffer" })
 
@@ -39,19 +40,21 @@ vim.keymap.set(
 
 -- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "chmod +x current file" })
 
--- vim.keymap.set(
--- 	"n",
--- 	"<leader>/",
--- 	'<cmd>lua require("Comment.api").toggle.linewise.current()<CR>',
--- 	{ desc = "toggle comment out" }
--- )
+--[[ vim.keymap.set(
+	"n",
+	"<leader>/",
+	'<cmd>lua require("Comment.api").toggle.linewise.current()<CR>',
+	{ desc = "toggle comment out" }
+)
+]]
 
-vim.keymap.set(
+--[[ vim.keymap.set(
 	"v",
 	"<leader>/",
 	'<ESC><cmd>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>',
 	{ desc = "toggle comment out" }
 )
+]]
 
 vim.keymap.set("n", "<leader>o", "o<Esc>0_D", { desc = "insert line below in normal mode" })
 vim.keymap.set("n", "<leader>O", "O<Esc>0_D", { desc = "insert line above in normal mode" })

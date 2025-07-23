@@ -6,6 +6,7 @@
 includes=(
   rclone_alias
   eza_alias
+  ls_aliases
   neovim_default
   helper_functions
   git_completion

@@ -37,6 +37,7 @@ local ok, start = pcall(function()
 			"yamlls",
 		},
 	})
+
 	mason_lspconfig.setup_handlers({
 		["eslint"] = function()
 			require("typescript-tools").setup({
@@ -44,7 +45,6 @@ local ok, start = pcall(function()
 			})
 		end,
 	})
-
 	lspconfig.pyright.setup({
 		capabilities = capabilities,
 		filetypes = { "python" },
@@ -70,23 +70,7 @@ local ok, start = pcall(function()
 			},
 		},
 	})
-	-- lspconfig.ltex.setup({
-	-- 	capabilities = capabilities,
-	-- 	filetypes = {
-	-- 		"tex",
-	-- 		"markdown",
-	-- 		"bib",
-	-- 		"gitcommit",
-	-- 		"org",
-	-- 		"rst",
-	-- 		"rnoweb",
-	-- 		"pandoc",
-	-- 		"quarto",
-	-- 		"rmd",
-	-- 		"context",
-	-- 	},
-	-- })
-	lspconfig.ltex_plus.setup({
+	--[[ lspconfig.ltex.setup({
 		capabilities = capabilities,
 		filetypes = {
 			"tex",
@@ -101,7 +85,23 @@ local ok, start = pcall(function()
 			"rmd",
 			"context",
 		},
-	})
+	}) ]]
+	--[[ lspconfig.ltex_plus.setup({
+		capabilities = capabilities,
+		filetypes = {
+			"tex",
+			"markdown",
+			"bib",
+			"gitcommit",
+			"org",
+			"rst",
+			"rnoweb",
+			"pandoc",
+			"quarto",
+			"rmd",
+			"context",
+		},
+	}) ]]
 	lspconfig.emmet_ls.setup({
 		capabilities = vim.lsp.protocol.make_client_capabilities(),
 		filetypes = {
@@ -146,35 +146,35 @@ local ok, start = pcall(function()
 
 	-- needed only if using tsserver and not typescript-tools.nvim
 	-- Organize Imports function
-	-- local function organize_imports()
-	-- 	local params = {
-	-- 		command = "_typescript.organizeImports",
-	-- 		arguments = { vim.api.nvim_buf_get_name(0) },
-	-- 	}
-	-- 	vim.lsp.buf.execute_command(params)
-	-- end
+	--[[ local function organize_imports()
+		local params = {
+			command = "_typescript.organizeImports",
+			arguments = { vim.api.nvim_buf_get_name(0) },
+		}
+		vim.lsp.buf.execute_command(params)
+	end ]]
 
 	-- add tsserver if not using typescript-tools.nvim
-	-- local ts_servers = {"eslint", "tailwindcss"}
-	-- for _, lsp in ipairs(ts_servers) do
-	--   lspconfig[lsp].setup({
-	--     capabilities = capabilities,
-	--   root_dir = nvim_lsp.util.root_pattern("package.json"),
-	--   single_file_support = false
-	-- uncomment below if using tsserver
-	-- init_options = {
-	-- preferences = {
-	-- disableSuggestions = true,
-	-- }
-	-- },
-	-- commands = {
-	-- OrganizeImports = {
-	-- organize_imports,
-	-- description = "Organize Imports",
-	-- },
-	-- },
-	--   })
-	-- end
+	--[[ local ts_servers = {"eslint", "tailwindcss"}
+	for _, lsp in ipairs(ts_servers) do
+	  lspconfig[lsp].setup({
+	    capabilities = capabilities,
+	  root_dir = nvim_lsp.util.root_pattern("package.json"),
+	  single_file_support = false
+	uncomment below if using tsserver
+	init_options = {
+	preferences = {
+	disableSuggestions = true,
+	}
+	},
+	commands = {
+	OrganizeImports = {
+	organize_imports,
+	description = "Organize Imports",
+	},
+	},
+	  })
+	end ]]
 end)
 
 if not ok then

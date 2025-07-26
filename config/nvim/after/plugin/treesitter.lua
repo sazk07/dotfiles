@@ -29,6 +29,7 @@ local ok, start = pcall(function()
 			"make",
 			"markdown",
 			"php",
+			"prisma",
 			"python",
 			"rust",
 			"sql",

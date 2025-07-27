@@ -133,6 +133,7 @@ local ok, start = pcall(function()
 		"jsonls",
 		"lua_ls",
 		"neocmake",
+		"prisma",
 		"sqlls",
 		"svelte",
 		"volar",

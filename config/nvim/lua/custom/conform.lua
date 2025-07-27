@@ -10,7 +10,7 @@ if conform then
 			javascript = {  "prettier" },
 			typescript = {  "prettier" },
 			go = { "gofumpt", "goimports_reviser", "golines" },
-			html = { "htmlbeautifier" },
+			html = { "prettier" },
 			markdown = {  "mdformat", "prettier" },
 			latex = { "latexindent" },
 			cpp = { "clang_format" },

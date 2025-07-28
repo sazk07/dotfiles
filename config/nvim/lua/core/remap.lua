@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
--- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, {desc = "go to dir"})
+--[[ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, {desc = "go to dir"}) ]]
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "move selection down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "move selection up" })
@@ -15,7 +15,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "yank line to global register
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "delete to void" })
 
--- vim.keymap.set("i", "<C-c>", "<Esc>")
+--[[ vim.keymap.set("i", "<C-c>", "<Esc>") ]]
 
 vim.keymap.set("n", "Q", "<nop>", { desc = "disable Q" })
 
@@ -38,7 +38,7 @@ vim.keymap.set(
 	{ desc = "sed on word at cursor" }
 )
 
--- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "chmod +x current file" })
+--[[ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "chmod +x current file" }) ]]
 
 --[[ vim.keymap.set(
 	"n",

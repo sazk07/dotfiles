@@ -176,7 +176,7 @@ return require("packer").startup(function(use)
 			require("custom.lualine")
 		end,
 	})
-	-- use 'itchyny/lightline.vim'
+--[[ 	use 'itchyny/lightline.vim' ]]
 
 	use("nvim-tree/nvim-web-devicons")
 
@@ -253,13 +253,13 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	-- use({
-	-- 	"kosayoda/nvim-lightbulb",
-	-- 	event = "BufReadPost",
-	-- 	config = function()
-	-- 		require("custom.nvim-lightbulb")
-	-- 	end,
-	-- })
+	--[[ use({
+		"kosayoda/nvim-lightbulb",
+		event = "BufReadPost",
+		config = function()
+			require("custom.nvim-lightbulb")
+		end,
+	}) ]]
 
 	use({
 		"sazk07/peek.nvim",
@@ -269,17 +269,17 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	-- use({
-	-- 	"MeanderingProgrammer/render-markdown.nvim",
-	-- 	after={"nvim-treesitter"},
-	-- 	config = function()
-	-- 		require("custom.render-markdown")
-	-- 	end,
-	-- })
+	--[[ use({
+		"MeanderingProgrammer/render-markdown.nvim",
+		after={"nvim-treesitter"},
+		config = function()
+			require("custom.render-markdown")
+		end,
+	}) ]]
 
-	-- use ({ "ThePrimeagen/harpoon" })
+--[[ 	use ({ "ThePrimeagen/harpoon" }) ]]
 
-	-- use({ "ray-x/lsp_signature.nvim", })
+--[[ 	use({ "ray-x/lsp_signature.nvim", }) ]]
 
 	-- Themes
 	use({

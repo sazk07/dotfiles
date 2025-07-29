@@ -38,6 +38,8 @@ vim.api.nvim_exec2("set mps +=<:>", { output = false })
 
 vim.opt.hidden = false
 
+vim.opt.winborder = "rounded"
+
 --------------------------------------------------------------------------
 -- Highlight on yank
 vim.api.nvim_create_augroup("YankHighlight", { clear = true })

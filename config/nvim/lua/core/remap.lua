@@ -61,3 +61,6 @@ vim.keymap.set("n", "<leader>O", "O<Esc>0_D", { desc = "insert line above in nor
 
 vim.keymap.set("n", "<leader>tk", "<C-w>t<C-w>K", { desc = "change vertical window to horizontal" })
 vim.keymap.set("n", "<leader>th", "<C-w>t<C-w>H", { desc = "change horizontal window to vertical" })
+
+vim.keymap.set("i", "jj", "<ESC>", { desc = "escape insert mode" })
+vim.keymap.set("i", "jk", "<ESC>", { desc = "escape insert mode" })

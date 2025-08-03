@@ -219,13 +219,13 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	use({
+	--[[ use({
 		"max397574/better-escape.nvim",
 		event = "InsertEnter",
 		config = function()
 			require("custom.better-escape")
 		end,
-	})
+	}) ]]
 
 	use({
 		"Exafunction/codeium.vim",

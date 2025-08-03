@@ -32,7 +32,7 @@ local ok, start = pcall(function()
 			"sqlls",
 			-- "svelte",
 			"tailwindcss",
-			"ts_ls",
+			-- "ts_ls",
 			-- "volar",
 			"yamlls",
 		},

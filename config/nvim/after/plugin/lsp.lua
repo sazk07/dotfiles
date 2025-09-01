@@ -32,7 +32,7 @@ local ok, start = pcall(function()
 			"sqlls",
 			-- "svelte",
 			"tailwindcss",
-			-- "ts_ls",
+			"ts_ls",
 			-- "volar",
 			"yamlls",
 		},
@@ -147,35 +147,35 @@ local ok, start = pcall(function()
 
 	-- needed only if using tsserver and not typescript-tools.nvim
 	-- Organize Imports function
-	--[[ local function organize_imports()
+	local function organize_imports()
 		local params = {
 			command = "_typescript.organizeImports",
 			arguments = { vim.api.nvim_buf_get_name(0) },
 		}
 		vim.lsp.buf.execute_command(params)
-	end ]]
+	end
 
 	-- add tsserver if not using typescript-tools.nvim
-	--[[ local ts_servers = {"eslint", "tailwindcss"}
+	local ts_servers = { "eslint", "tailwindcss" }
 	for _, lsp in ipairs(ts_servers) do
-	  lspconfig[lsp].setup({
-	    capabilities = capabilities,
-	  root_dir = nvim_lsp.util.root_pattern("package.json"),
-	  single_file_support = false
-	uncomment below if using tsserver
-	init_options = {
-	preferences = {
-	disableSuggestions = true,
-	}
-	},
-	commands = {
-	OrganizeImports = {
-	organize_imports,
-	description = "Organize Imports",
-	},
-	},
-	  })
-	end ]]
+		lspconfig[lsp].setup({
+			capabilities = capabilities,
+			root_dir = nvim_lsp.util.root_pattern("package.json"),
+			single_file_support = false,
+			-- uncomment below if using tsserver
+			init_options = {
+				preferences = {
+					disableSuggestions = true,
+				}
+			},
+			commands = {
+				OrganizeImports = {
+					organize_imports,
+					description = "Organize Imports",
+				},
+			},
+		})
+	end
 end)
 
 if not ok then

@@ -88,10 +88,10 @@ return require("packer").startup(function(use)
 		"rafamadriz/friendly-snippets",
 	})
 
-	use({
+	--[[ use({
 		"sazk07/typescript-tools.nvim",
 		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-	})
+	}) ]]
 
 	-- Linter
 	use({

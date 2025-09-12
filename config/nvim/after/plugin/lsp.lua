@@ -134,6 +134,7 @@ local ok, start = pcall(function()
 		"lua_ls",
 		"neocmake",
 		"prisma",
+		"ts_ls",
 		"sqlls",
 		"svelte",
 		"volar",

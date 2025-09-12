@@ -38,13 +38,6 @@ local ok, start = pcall(function()
 		},
 	})
 
-	mason_lspconfig.setup_handlers({
-		["eslint"] = function()
-			require("typescript-tools").setup({
-				expose_as_code_action = { "organize_imports" },
-			})
-		end,
-	})
 	lspconfig.pyright.setup({
 		capabilities = capabilities,
 		filetypes = { "python" },

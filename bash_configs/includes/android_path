@@ -1,0 +1,18 @@
+# add to path if not already present
+append_to_path() {
+  local dir=$1
+  [[ -d $dir ]] || return
+  case ":$PATH:" in
+    *":$dir:"*) ;;
+    *) PATH="${PATH:+"$PATH:"}$dir" ;;
+  esac
+}
+
+ANDROID_HOME="/opt/android-sdk"
+
+if [[ -d "$ANDROID_HOME" ]]; then
+  export ANDROID_SDK_ROOT=$ANDROID_HOME
+  append_to_path "$ANDROID_HOME/cmdline-tools/latest/bin"
+  append_to_path "$ANDROID_HOME/platform-tools"
+  append_to_path "$ANDROID_HOME/build-tools/35.0.1"
+fi

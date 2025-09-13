@@ -1,4 +1,3 @@
-
 # add to path if not already present
 prepend_to_path() {
   local dir=$1
@@ -9,11 +8,10 @@ prepend_to_path() {
   esac
 }
 
-# Initialize Deno if installed
-DENO_INSTALL="$HOME/.deno"
-deno_exe="$DENO_INSTALL/bin/deno"
+# Initialize Flutter SDK if installed
+FLUTTER_INSTALL="$HOME/development/flutter"
+flutter_bin="$FLUTTER_INSTALL/bin"
 
-if [[ -x "$deno_exe" ]]; then
-  export DENO_INSTALL
-  prepend_to_path "$DENO_INSTALL/bin"
+if [[ -d "$flutter_bin" ]]; then
+  prepend_to_path "$flutter_bin"
 fi

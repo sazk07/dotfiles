@@ -1,3 +1,14 @@
+
+# add to path if not already present
+prepend_to_path() {
+  local dir=$1
+  [[ -d $dir ]] || return
+  case ":$PATH:" in
+    *":$dir:"*) ;;
+    *) PATH="$dir${PATH:+":$PATH"}" ;;
+  esac
+}
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 
@@ -10,7 +21,7 @@ if [[ -x "$HOME/miniconda3/bin/conda" ]]; then
   elif [[ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]]; then
     source "$HOME/miniconda3/etc/profile.d/conda.sh"
   else
-    export PATH="$HOME/miniconda3/bin:$PATH"
+    prepend_to_path "$HOME/miniconda3/bin"
   fi
 
   unset __conda_setup conda_path

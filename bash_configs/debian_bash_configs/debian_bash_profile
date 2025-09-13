@@ -12,6 +12,30 @@ else
 	source "$bashrc"
 fi
 
+# Source env variables if available
+includes=(
+	neovim_path
+  cargo_path
+  nvm_path
+  pyenv_path
+	conda_path
+	deno_path
+	flutter_path
+	android_path
+	java_path
+)
+
+for include in "${includes[@]}"; do
+    config="$HOME/dotfiles/bash_configs/includes/$include"
+    if [[ ! -r "$config" ]]; then
+        printf 'Errorq %q not found or not readable.\n' "$config" >&2
+    elif [[ ! -s "$config" ]]; then
+        printf 'Error: %q is empty.\n' "$config" >&2
+    else
+        source "$config"
+    fi
+done
+
 # Start graphical session on tty1 if i3 isn't already running
 if [[ $(tty) == /dev/tty1 ]]; then
 	xinitrc="$HOME/.config/X11/xinitrc"

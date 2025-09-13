@@ -8,9 +8,8 @@ append_to_path() {
   esac
 }
 
-# Add Go to PATH (append) if installed and not already in PATH
-GO_BIN="/usr/local/go/bin"
+JAVA_HOME="/usr/lib/jvm/java-24-openjdk"
 
-if [[ -d "$GO_BIN" && ":$PATH:" != *":$GO_BIN:"* ]]; then
-  append_to_path "$GO_BIN"
+if [[ -d "$JAVA_HOME" ]]; then
+  append_to_path "$JAVA_HOME/bin"
 fi

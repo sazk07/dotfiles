@@ -9,13 +9,7 @@ includes=(
 	git_completion
 	rclone_alias
 	eza_alias
-	neovim_path
 	neovim_default
-	cargo_path
-	nvm_path
-	pyenv_path
-	conda_path
-	deno_path
 )
 
 for include in "${includes[@]}"; do

@@ -15,7 +15,7 @@ return require("packer").startup(function(use)
 		end,
 		requires = {
 			{ "nvim-treesitter/nvim-treesitter-textobjects", after = "nvim-treesitter" },
-			{ "nvim-treesitter/nvim-treesitter-context", after = "nvim-treesitter" },
+			{ "nvim-treesitter/nvim-treesitter-context",     after = "nvim-treesitter" },
 		},
 	})
 
@@ -120,7 +120,7 @@ return require("packer").startup(function(use)
 			"theHamsta/nvim-dap-virtual-text",
 			"jay-babu/mason-nvim-dap.nvim",
 			"mfussenegger/nvim-dap-python", -- requires debugpy from Mason
-			"leoluz/nvim-dap-go", -- requires delve from Mason
+			"leoluz/nvim-dap-go",        -- requires delve from Mason
 			"rcarriga/cmp-dap",
 		},
 		event = { "VimEnter" },
@@ -176,7 +176,7 @@ return require("packer").startup(function(use)
 			require("custom.lualine")
 		end,
 	})
---[[ 	use 'itchyny/lightline.vim' ]]
+	--[[ 	use 'itchyny/lightline.vim' ]]
 
 	use("nvim-tree/nvim-web-devicons")
 
@@ -277,22 +277,28 @@ return require("packer").startup(function(use)
 		end,
 	}) ]]
 
---[[ 	use ({ "ThePrimeagen/harpoon" }) ]]
+	--[[ 	use ({ "ThePrimeagen/harpoon" }) ]]
 
---[[ 	use({ "ray-x/lsp_signature.nvim", }) ]]
+	--[[ 	use({ "ray-x/lsp_signature.nvim", }) ]]
+
+	use({
+		"nvim-flutter/flutter-tools.nvim",
+		requires = "nvim-lua/plenary.nvim",
+		event = "VimEnter"
+	})
 
 	-- Themes
 	use({
 		{ "navarasu/onedark.nvim" },
 		"tanvirtin/monokai.nvim",
 		"folke/tokyonight.nvim",
-		{ "catppuccin/nvim", as = "catppuccin" },
+		{ "catppuccin/nvim",      as = "catppuccin" },
 		"ellisonleao/gruvbox.nvim",
 		"rmehri01/onenord.nvim",
 		"AlexvZyl/nordic.nvim",
 		"rebelot/kanagawa.nvim",
 		"nyoom-engineering/oxocarbon.nvim",
-		{ "Everblush/nvim", as = "everblush" },
+		{ "Everblush/nvim",   as = "everblush" },
 		"lunarvim/Onedarker.nvim",
 		"gbprod/nord.nvim",
 		"neanias/everforest-nvim",
@@ -322,7 +328,7 @@ return require("packer").startup(function(use)
 		"NTBBloodbath/doom-one.nvim",
 		"yashguptaz/calvera-dark.nvim",
 		"nxvu699134/vn-night.nvim",
-		{ "adisen99/codeschool.nvim", requires = { "rktjmp/lush.nvim" } },
+		{ "adisen99/codeschool.nvim",  requires = { "rktjmp/lush.nvim" } },
 		"kdheepak/monochrome.nvim",
 		{ "rose-pine/neovim", as = "rose-pine" },
 		"mcchrish/zenbones.nvim",

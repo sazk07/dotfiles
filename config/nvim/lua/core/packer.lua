@@ -284,8 +284,17 @@ return require("packer").startup(function(use)
 	use({
 		"nvim-flutter/flutter-tools.nvim",
 		requires = "nvim-lua/plenary.nvim",
-		event = "VimEnter"
+		config = function()
+			require("custom.flutter")
+		end,
 	})
+
+	--[[ use({
+		"dart-lang/dart-vim-plugin",
+		config = function()
+			require("custom.dart")
+		end,
+	}) ]]
 
 	-- Themes
 	use({

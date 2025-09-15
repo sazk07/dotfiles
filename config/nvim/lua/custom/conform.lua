@@ -15,7 +15,8 @@ if conform then
 			latex = { "latexindent" },
 			cpp = { "clang_format" },
 			c = { "clang_format" },
-			css = {  "prettier" }
+			css = {  "prettier" },
+			dart = { "dart_format" }
 		},
 		format_on_save = function(bufnr)
 			if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then

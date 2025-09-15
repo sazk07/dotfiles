@@ -172,10 +172,10 @@ local ok, start = pcall(function()
 	end
 
 	-- dart lsp config
-	lspconfig.dartls.setup({
+	--[[ lspconfig.dartls.setup({
 		capabilities = capabilities,
 		filetypes = { "dart" },
-	})
+	}) ]]
 
 end)
 

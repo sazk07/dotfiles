@@ -4,6 +4,7 @@ out
 dist/
 types/
 coverage/
+/package
 
 # Logs
 logs

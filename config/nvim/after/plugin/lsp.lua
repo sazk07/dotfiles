@@ -33,24 +33,20 @@ local ok, start = pcall(function()
 			-- "svelte",
 			"tailwindcss",
 			"ts_ls",
-			-- "volar",
 			"yamlls",
 		},
 	})
 
-	lspconfig.pyright.setup({
-		capabilities = capabilities,
-		filetypes = { "python" },
-	})
-	lspconfig.clangd.setup({
-		capabilities = capabilities,
-		filetypes = { "cpp", "c" },
-	})
-	lspconfig.gopls.setup({
+	vim.lsp.config("pyright", { capabilities = capabilities, filetypes = { "python" } })
+	vim.lsp.enable("pyright")
+
+	vim.lsp.config("clangd", { capabilities = capabilities, filetypes = { "c", "cpp" } })
+	vim.lsp.enable("clangd")
+
+	vim.lsp.config("gopls", {
 		capabilities = capabilities,
 		cmd = { "gopls" },
 		filetypes = { "go", "gomod", "gowork", "gotmpl" },
-		root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
 		settings = {
 			gopls = {
 				completeUnimported = true,
@@ -63,6 +59,8 @@ local ok, start = pcall(function()
 			},
 		},
 	})
+	vim.lsp.enable("gopls")
+
 	--[[ lspconfig.ltex.setup({
 		capabilities = capabilities,
 		filetypes = {
@@ -95,7 +93,8 @@ local ok, start = pcall(function()
 			"context",
 		},
 	}) ]]
-	lspconfig.emmet_ls.setup({
+
+	vim.lsp.config("emmet_ls", {
 		capabilities = vim.lsp.protocol.make_client_capabilities(),
 		filetypes = {
 			"css",
@@ -117,6 +116,7 @@ local ok, start = pcall(function()
 			}
 		}
 	})
+	vim.lsp.enable("emmet_ls")
 
 	local servers = {
 		"astro",
@@ -127,17 +127,39 @@ local ok, start = pcall(function()
 		"lua_ls",
 		"neocmake",
 		"prisma",
-		"ts_ls",
 		"sqlls",
 		"svelte",
-		"volar",
+		-- "ts_ls",
 		"yamlls",
 	}
 	for _, lsp in ipairs(servers) do
-		lspconfig[lsp].setup({
-			capabilities = capabilities,
-		})
+		vim.lsp.config(lsp, { capabilities = capabilities })
+		vim.lsp.enable(lsp)
 	end
+
+	-- setup ts_ls with vs_ls
+	local vue_language_server_path = vim.fn.stdpath('data') ..
+			"/mason/packages/vue-language-server/node_modules/@vue/language-server"
+	local tsserver_filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact",
+		"typescript.tsx", "vue" }
+	local vue_plugin = {
+		name = "@vue/typescript-plugin",
+		location = vue_language_server_path,
+		languages = { "vue" },
+		configNamespace = "typescript"
+	}
+	local ts_ls_config = {
+		init_options = {
+			plugins = {
+				vue_plugin
+			}
+		},
+		filetypes = tsserver_filetypes
+	}
+	local vue_ls_config = {}
+	vim.lsp.config("vue_ls", vue_ls_config)
+	vim.lsp.config("ts_ls", ts_ls_config)
+	vim.lsp.enable({ "ts_ls", "vue_ls" })
 
 	-- needed only if using tsserver and not typescript-tools.nvim
 	-- Organize Imports function
@@ -152,9 +174,8 @@ local ok, start = pcall(function()
 	-- add tsserver if not using typescript-tools.nvim
 	local ts_servers = { "eslint", "tailwindcss" }
 	for _, lsp in ipairs(ts_servers) do
-		lspconfig[lsp].setup({
+		vim.lsp.config(lsp, {
 			capabilities = capabilities,
-			root_dir = nvim_lsp.util.root_pattern("package.json"),
 			single_file_support = false,
 			-- uncomment below if using tsserver
 			init_options = {
@@ -169,14 +190,15 @@ local ok, start = pcall(function()
 				},
 			},
 		})
+		vim.lsp.enable(lsp)
 	end
 
 	-- dart lsp config
-	--[[ lspconfig.dartls.setup({
+	--[[ vim.lsp.config("dartls", {
 		capabilities = capabilities,
 		filetypes = { "dart" },
-	}) ]]
-
+	})
+	vim.lsp.enable({ "dartls" }) ]]
 end)
 
 if not ok then

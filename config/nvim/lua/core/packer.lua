@@ -23,7 +23,7 @@ return require("packer").startup(function(use)
 	use({
 		{
 			"nvim-telescope/telescope.nvim",
-			tag = "0.1.5",
+			tag = "0.1.8",
 			-- or                            , branch = '0.1.x',
 			requires = {
 				"nvim-lua/plenary.nvim",
@@ -43,6 +43,13 @@ return require("packer").startup(function(use)
 		},
 	})
 
+	--[[ use({
+		"sazk07/typescript-tools.nvim",
+		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+	}) ]]
+
+
+	-- Completion snippets
 	use({
 		{
 			"hrsh7th/nvim-cmp",
@@ -87,11 +94,6 @@ return require("packer").startup(function(use)
 		},
 		"rafamadriz/friendly-snippets",
 	})
-
-	--[[ use({
-		"sazk07/typescript-tools.nvim",
-		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-	}) ]]
 
 	-- Linter
 	use({

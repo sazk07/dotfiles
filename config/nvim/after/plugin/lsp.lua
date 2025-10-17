@@ -1,7 +1,6 @@
 local ok, start = pcall(function()
 	local mason = require("mason")
 	local mason_lspconfig = require("mason-lspconfig")
-	local lspconfig = vim.lsp.config
 	local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 	mason.setup({

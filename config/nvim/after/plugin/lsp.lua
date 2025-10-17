@@ -139,8 +139,8 @@ local ok, start = pcall(function()
 	-- setup ts_ls with vs_ls
 	local vue_language_server_path = vim.fn.stdpath('data') ..
 			"/mason/packages/vue-language-server/node_modules/@vue/language-server"
-	local tsserver_filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact",
-		"typescript.tsx", "vue" }
+	local cfg = vim.lsp.config.ts_ls
+	local tsserver_filetypes = (cfg and cfg.filetypes) or {}
 	local vue_plugin = {
 		name = "@vue/typescript-plugin",
 		location = vue_language_server_path,
@@ -153,7 +153,8 @@ local ok, start = pcall(function()
 				vue_plugin
 			}
 		},
-		filetypes = tsserver_filetypes
+		filetypes = tsserver_filetypes,
+		table.insert(tsserver_filetypes, "vue")
 	}
 	local vue_ls_config = {}
 	vim.lsp.config("vue_ls", vue_ls_config)

@@ -11,6 +11,11 @@
   ],
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
     "composite": true,
     "rootDir": "./src",
     "declarationDir": "./types",
@@ -30,11 +35,6 @@
     "moduleResolution": "bundler",
     "jsx": "react-jsx",
     "allowImportingTsExtensions": true,
-    "noEmit": true,
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    }
+    "noEmit": true
   }
 }

@@ -24,10 +24,10 @@ vim.keymap.set("n", "Q", "<nop>", { desc = "disable Q" })
 end, { desc = "format buffer" })
 ]]
 
-vim.keymap.set("n", "<leader>f", "<cmd>Format<CR>", { desc = "format buffer" })
+vim.keymap.set("n", "<leader>ft", "<cmd>Format<CR>", { desc = "format buffer" })
 
-vim.keymap.set("n", "<leader>k", "<cmd>cnext<CR>zz", { desc = "forward qfixlist" })
-vim.keymap.set("n", "<leader>j", "<cmd>cprev<CR>zz", { desc = "backward qfixlist" })
+vim.keymap.set("n", "<leader>kq", "<cmd>cnext<CR>zz", { desc = "forward qfixlist" })
+vim.keymap.set("n", "<leader>jq", "<cmd>cprev<CR>zz", { desc = "backward qfixlist" })
 vim.keymap.set("n", "<leader>kl", "<cmd>lnext<CR>zz", { desc = "forward location list" })
 vim.keymap.set("n", "<leader>jl", "<cmd>lprev<CR>zz", { desc = "backward location list" })
 

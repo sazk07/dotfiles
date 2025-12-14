@@ -1,0 +1,19 @@
+# add to path if not already present
+prepend_to_path() {
+  local dir=$1
+  [[ -d $dir ]] || return
+  case ":$PATH:" in
+    *":$dir:"*) ;;
+    *) PATH="$dir${PATH:+":$PATH"}" ;;
+  esac
+}
+
+# Initialize pyenv if available
+PYENV_ROOT="$HOME/.pyenv"
+pyenv_exe="$PYENV_ROOT/bin/pyenv"
+
+if [[ -x "$pyenv_exe" ]]; then
+  export PYENV_ROOT
+  prepend_to_path "$PYENV_ROOT/bin"
+  eval "$(pyenv init - bash)"
+fi

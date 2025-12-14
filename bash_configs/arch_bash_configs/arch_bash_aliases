@@ -1,0 +1,27 @@
+#
+# ~/.bash_aliases
+#
+
+# Load all Bash configuration includes from dotfiles
+includes=(
+  rclone_alias
+  eza_alias
+  ls_aliases
+  neovim_default
+  helper_functions
+  git_completion
+)
+
+for include in "${includes[@]}"; do
+  config="$HOME/dotfiles/bash_configs/includes/$include"
+  if [[ ! -r "$config" ]]; then
+    printf 'Error: %q not found or not readable.\n' "$config" >&2
+  elif [[ ! -s "$config" ]]; then
+    printf 'Error: %q is empty.\n' "$config" >&2
+  else
+    source "$config"
+  fi
+done
+
+# source node version manager
+source /usr/share/nvm/init-nvm.sh

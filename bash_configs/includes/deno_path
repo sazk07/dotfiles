@@ -1,0 +1,19 @@
+
+# add to path if not already present
+prepend_to_path() {
+  local dir=$1
+  [[ -d $dir ]] || return
+  case ":$PATH:" in
+    *":$dir:"*) ;;
+    *) PATH="$dir${PATH:+":$PATH"}" ;;
+  esac
+}
+
+# Initialize Deno if installed
+DENO_INSTALL="$HOME/.deno"
+deno_exe="$DENO_INSTALL/bin/deno"
+
+if [[ -x "$deno_exe" ]]; then
+  export DENO_INSTALL
+  prepend_to_path "$DENO_INSTALL/bin"
+fi

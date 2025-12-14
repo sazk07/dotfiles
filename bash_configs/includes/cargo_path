@@ -1,0 +1,23 @@
+# add to path if not already present
+prepend_to_path() {
+  local dir=$1
+  [[ -d $dir ]] || return
+  case ":$PATH:" in
+    *":$dir:"*) ;;
+    *) PATH="$dir${PATH:+":$PATH"}" ;;
+  esac
+}
+
+# Load Cargo environment if env file exists
+if [[ -z "$CARGO_DIR" ]]; then
+    readonly CARGO_DIR="${HOME}/.cargo"
+    readonly CARGO_ENV="${CARGO_DIR}/env"
+fi
+
+# Source the Cargo environment file if it exists, otherwise add bin to PATH
+if [[ -f "$CARGO_ENV" ]]; then
+    # shellcheck source=/dev/null
+    source "$CARGO_ENV"
+elif [[ -d "$CARGO_DIR/bin" ]]; then
+    prepend_to_path "${CARGO_DIR}/bin"
+fi

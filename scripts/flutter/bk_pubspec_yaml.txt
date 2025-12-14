@@ -1,0 +1,34 @@
+name: todo_app
+description: "A simple Flutter todo app with SQLite storage"
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  sqflite: ^2.3.0     # SQLite plugin for Flutter
+  path: ^1.9.0        # Needed to find database file paths
+  path_provider: ^2.1.5 # To locate application documents directory
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+# postgresql
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.2.0        # REST API calls
+  # no sqflite
+
+# IndexedDB
+dependencies:
+  flutter:
+    sdk: flutter
+  idb_shim: ^2.6.1   # IndexedDB for web

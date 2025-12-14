@@ -1,0 +1,15 @@
+# add to path if not already present
+append_to_path() {
+  local dir=$1
+  [[ -d $dir ]] || return
+  case ":$PATH:" in
+    *":$dir:"*) ;;
+    *) PATH="${PATH:+"$PATH:"}$dir" ;;
+  esac
+}
+
+JAVA_HOME="/usr/lib/jvm/java-24-openjdk"
+
+if [[ -d "$JAVA_HOME" ]]; then
+  append_to_path "$JAVA_HOME/bin"
+fi

@@ -1,0 +1,16 @@
+# Show current Git branch in the prompt (if inside a Git repo)
+git_branch() {
+  local branch
+  branch=$(git symbolic-ref --short HEAD 2>/dev/null) || return
+  echo "($branch)"
+}
+
+# Set Bash prompt to include Git branch
+export PS1='[\u@\h \W$(git_branch)]\$ '
+
+# Create directory and cd into it
+mkdircd() {
+  mkdir -p "$1" && cd "$1"
+}
+
+set -o vi

@@ -1,0 +1,43 @@
+#
+# ~/.bash_profile
+#
+
+# Source interactive shell settings if available
+bashrc="$HOME/.bashrc"
+if [[ ! -r "$bashrc" ]]; then
+    printf 'Error: %q not found or not readable.\n' "$bashrc" >&2
+elif [[ ! -s "$bashrc" ]]; then
+    printf 'Error: %q is empty.\n' "$bashrc" >&2
+else
+    source "$bashrc"
+fi
+
+# Source env variables if available
+includes=(
+    flutter_path
+    android_path
+    java_path
+)
+
+for include in "${includes[@]}"; do
+    config="$HOME/dotfiles/bash_configs/includes/$include"
+    if [[ ! -r "$config" ]]; then
+        printf 'Errorq %q not found or not readable.\n' "$config" >&2
+    elif [[ ! -s "$config" ]]; then
+        printf 'Error: %q is empty.\n' "$config" >&2
+    else
+        source "$config"
+    fi
+done
+
+# Start graphical session on tty1 if i3 isn't already running
+if [[ $(tty) == /dev/tty1 ]]; then
+    xinitrc="$HOME/.config/X11/xinitrc"
+    if [[ ! -r "$xinitrc" ]]; then
+        printf 'Error: %q not found or not readable.\n' "$xinitrc" >&2
+    elif [[ ! -s "$xinitrc" ]]; then
+        printf 'Error: %q is empty.\n' "$xinitrc" >&2
+    elif ! pgrep -u "$USER" -x i3 &>/dev/null; then
+        exec startx "$xinitrc"
+    fi
+fi

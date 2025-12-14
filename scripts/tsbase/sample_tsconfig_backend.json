@@ -1,0 +1,33 @@
+{
+  "extends": "../configs/tsbase",
+  "references": [
+    {
+      "path": "../shared"
+    }
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "./src",
+    "declarationDir": "./types",
+    "declarationMap": true,
+    "sourceMap": true,
+    "useDefineForClassFields": true,
+    "module": "nodenext",
+    "lib": [
+      "es2024",
+      "ESNext.Array",
+      "ESNext.Collection",
+      "ESNext.Iterator"
+    ],
+    "moduleResolution": "node16",
+    "outDir": "./dist"
+  },
+  "include": [
+    "src/**/*.ts",
+    "tests/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

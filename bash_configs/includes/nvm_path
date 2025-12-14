@@ -1,0 +1,14 @@
+# Initialize NVM if installed
+NVM_DIR="$HOME/.nvm"
+
+if [[ -d "$NVM_DIR" ]]; then
+  export NVM_DIR
+
+  if [[ -s "$NVM_DIR/nvm.sh" ]]; then
+    source "$NVM_DIR/nvm.sh"
+  fi
+  if [[ -s "$NVM_DIR/bash_completion" ]]; then
+    source "$NVM_DIR/bash_completion"
+  fi
+
+fi

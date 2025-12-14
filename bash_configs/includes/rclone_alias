@@ -1,0 +1,4 @@
+# Define rclone sync alias if rclone is installed
+if command -v rclone &>/dev/null; then
+  alias rspd='rclone sync --progress --drive-acknowledge-abuse --exclude="**/node_modules/**" --exclude="**/vendor/**" --exclude="**/.env/**" --exclude="**/.git/**"'
+fi

@@ -1,0 +1,17 @@
+# add to path if not already present
+prepend_to_path() {
+  local dir=$1
+  [[ -d $dir ]] || return
+  case ":$PATH:" in
+    *":$dir:"*) ;;
+    *) PATH="$dir${PATH:+":$PATH"}" ;;
+  esac
+}
+
+# Initialize Flutter SDK if installed
+FLUTTER_INSTALL="$HOME/development/flutter"
+flutter_bin="$FLUTTER_INSTALL/bin"
+
+if [[ -d "$flutter_bin" ]]; then
+  prepend_to_path "$flutter_bin"
+fi

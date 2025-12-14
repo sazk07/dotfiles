@@ -1,0 +1,38 @@
+# add to path if not already present
+append_to_path() {
+  local dir=$1
+  [[ -d $dir ]] || return
+  case ":$PATH:" in
+    *":$dir:"*) ;;
+    *) PATH="${PATH:+"$PATH:"}$dir" ;;
+  esac
+}
+
+# Check and add to PATH if Neovim exists in given directory
+add_to_path_if_nvim_exists() {
+    local dir="$1"
+    local binary="$dir/nvim"
+
+    if [[ -x "$binary" ]]; then
+        if [[ ":$PATH:" != *":$dir:"* ]]; then
+            append_to_path "$dir"
+        fi
+        return 0
+    fi
+
+    return 1
+}
+
+# Use strict mode for cleaner bugs (optional)
+# set -euo pipefail
+
+# Try common Neovim locations
+if add_to_path_if_nvim_exists "/opt/nvim-linux-x86_64/bin"; then
+    :
+elif add_to_path_if_nvim_exists "$HOME/.local/bin"; then
+    :
+elif command -v nvim &>/dev/null; then
+    echo "nvim found in system PATH"
+else
+    echo "nvim not found in expected locations."
+fi

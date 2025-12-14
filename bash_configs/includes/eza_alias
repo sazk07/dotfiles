@@ -1,0 +1,7 @@
+# Define eza-based aliases if eza is installed
+if command -v eza &>/dev/null; then
+  alias sl='eza -las=created --time-style=relative'
+  alias sla='eza -a'
+  alias csl='clear && sl'
+  alias csla='clear && sla'
+fi

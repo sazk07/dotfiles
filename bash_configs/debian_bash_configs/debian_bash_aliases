@@ -1,0 +1,26 @@
+#
+# ~/.bash_aliases
+#
+
+# Load all Bash configuration includes from dotfiles
+includes=(
+  helper_functions
+  dircolor_configs
+  ls_aliases
+  color_prompt_configs
+  git_completion
+  rclone_alias
+  eza_alias
+  neovim_default
+)
+
+for include in "${includes[@]}"; do
+  config="$HOME/dotfiles/bash_configs/includes/$include"
+  if [[ ! -r "$config" ]]; then
+    printf 'Error: %q not found or not readable.\n' "$config" >&2
+  elif [[ ! -s "$config" ]]; then
+    printf 'Error: %q is empty.\n' "$config" >&2
+  else
+    source "$config"
+  fi
+done

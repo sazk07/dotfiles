@@ -1,0 +1,16 @@
+# add to path if not already present
+append_to_path() {
+  local dir=$1
+  [[ -d $dir ]] || return
+  case ":$PATH:" in
+    *":$dir:"*) ;;
+    *) PATH="${PATH:+"$PATH:"}$dir" ;;
+  esac
+}
+
+# Add Go to PATH (append) if installed and not already in PATH
+GO_BIN="/usr/local/go/bin"
+
+if [[ -d "$GO_BIN" && ":$PATH:" != *":$GO_BIN:"* ]]; then
+  append_to_path "$GO_BIN"
+fi

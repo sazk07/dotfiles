@@ -1,0 +1,14 @@
+{
+    "scripts": {
+        "build": "tsc",
+        "build:build": "tsc --build",
+        "devstart:server": "tsx watch ./src/connect.ts",
+        "serverstart": "DEBUG=.:* npm run devstart:server",
+        "devstart:client": "python -m http.server",
+        "start": "npm run serverstart && npm run devstart:client",
+        "noEmit": "tsc --noEmit",
+        "lint": "eslint . --fix --cache",
+        "format": "prettier --write --experimental-cli src/",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    }
+}

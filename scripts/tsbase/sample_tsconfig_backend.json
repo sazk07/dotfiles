@@ -6,6 +6,11 @@
     }
   ],
   "compilerOptions": {
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
     "composite": true,
     "rootDir": "./src",
     "declarationDir": "./types",

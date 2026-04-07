@@ -30,6 +30,13 @@ for include in "${includes[@]}"; do
     fi
 done
 
+# Import the X11 environment variables into the systemd user manager.
+# This is the crucial fix for graphical user services.
+systemctl --user import-environment DISPLAY XAUTHORITY
+
+# Also update the D-Bus activation environment with these variables
+dbus-update-activation-environment --systemd DISPLAY XAUTHORITY
+
 # Start graphical session on tty1 if i3 isn't already running
 if [[ $(tty) == /dev/tty1 ]]; then
     xinitrc="$HOME/.config/X11/xinitrc"

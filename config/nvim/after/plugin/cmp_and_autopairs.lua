@@ -181,7 +181,7 @@ local ok, start = pcall(function()
 				buffer = ev.buf,
 				desc = "go to implementation",
 			})
-			vim.keymap.set("n", "go", vim.lsp.buf.type_definition, {
+			vim.keymap.set("n", "gy", vim.lsp.buf.type_definition, {
 				buffer = ev.buf,
 				desc = "go to type definition",
 			})

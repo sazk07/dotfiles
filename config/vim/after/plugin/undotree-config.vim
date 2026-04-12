@@ -1,9 +1,11 @@
-function! UndotreeSetup() abort
+vim9script
+
+def UndotreeSetup(): void
     try
         nnoremap <silent> <leader>u :UndotreeToggle<CR>
     catch
-        echo "UndotreeSetup failed: " . v:exception
+        echo "UndotreeSetup failed: " .. v:exception
     endtry
-endfunction
+enddef
 
-call UndotreeSetup()
+UndotreeSetup()

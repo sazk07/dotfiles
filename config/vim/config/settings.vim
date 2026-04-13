@@ -51,11 +51,6 @@ set rtp+=/usr/bin/fzf
 
 # ========================
 # Highlight multi-line yank (Vim 9.2, pure Vimscript)
-augroup YankHighlight
-    autocmd!
-    autocmd TextYankPost * HighlightYankMultiline()
-augroup END
-
 def HighlightYankMultiline(): void
     if !exists('*matchaddpos')
         return
@@ -83,8 +78,13 @@ def HighlightYankMultiline(): void
     var id = matchaddpos('IncSearch', positions, 10)
     redraw
     sleep 300m
-    matchdelete(l:id)
+    matchdelete(id)
 enddef
+
+augroup YankHighlight
+    autocmd!
+    autocmd TextYankPost * HighlightYankMultiline()
+augroup END
 
 # ========================
 # Remove trailing whitespace on save

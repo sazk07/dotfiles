@@ -49,6 +49,6 @@ inoremap <silent> jj <Esc>
 # escape insert mode"
 inoremap <silent> jk <Esc>
 # bind :find command to <leader>ff
-nnoremap <leader>ff :find<Space>./**/
+nnoremap <leader>ff :Files<Space>.<CR>
 # bind <leader>fg to :vimgrep
-nnoremap <leader>fg :vimgrep<Space>
+nnoremap <leader>fg :Rg<Space>

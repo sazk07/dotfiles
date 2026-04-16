@@ -14,6 +14,7 @@ augroup PackAddOnVimEnter
     autocmd VimEnter * ++once packadd vimwiki
     autocmd VimEnter * ++once packadd lsp
     autocmd VimEnter * ++once packadd ale
+    autocmd VimEnter * ++once packadd fzf.vim
 augroup END
 
 augroup PackAddOnInsertEnter

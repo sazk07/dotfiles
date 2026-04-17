@@ -7,15 +7,15 @@ if conform then
 		formatters_by_ft = {
 			lua = { "stylua" },
 			python = { "black", "ruff_format" },
-			javascript = {  "prettier" },
-			typescript = {  "prettier" },
+			javascript = { "prettier" },
+			typescript = { "prettier" },
 			go = { "gofumpt", "goimports_reviser", "golines" },
 			html = { "prettier" },
-			markdown = {  "mdformat", "prettier" },
+			markdown = { "mdformat", "prettier" },
 			latex = { "latexindent" },
 			cpp = { "clang_format" },
 			c = { "clang_format" },
-			css = {  "prettier" },
+			css = { "prettier" },
 			dart = { "dart_format" }
 		},
 		format_on_save = function(bufnr)

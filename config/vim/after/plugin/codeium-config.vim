@@ -7,7 +7,7 @@ def CodeiumSetup(): void
         #Accept completion
         imap <script><silent><nowait><expr> <C-a> codeium#Accept()
         # next completion
-        imap <C-x> <Cmd>call codeium#CycleCompletions(1)<CR>
+        imap <C-x>x <Cmd>call codeium#CycleCompletions(1)<CR>
         # previous completion
         imap <C-r> <Cmd>call codeium#CycleCompletions(-1)<CR>
         # clear suggestion

@@ -30,4 +30,11 @@ augroup END
 augroup PackAddOnBufReadPost
     autocmd!
     autocmd BufReadPost * ++once packadd vim-autoformat
+    autocmd BufReadPost * ++once packadd auto-pairs
+    autocmd BufReadPost * ++once packadd vim-vsnip
+    autocmd BufReadPost * ++once packadd vim-vsnip-integ
+    autocmd BufReadPost * ++once packadd friendly-snippets
+    autocmd BufReadPost * ++once packadd asyncomplete.vim
+    autocmd BufReadPost * ++once packadd asyncomplete-omni.vim
+    autocmd BufReadPost * ++once packadd asyncomplete-vsnip.vim
 augroup END

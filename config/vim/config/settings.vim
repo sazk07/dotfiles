@@ -155,8 +155,3 @@ command! -bang FormatDisable FormatDisable(<bang>0)
 
 # indentLine plugin setting
 g:indentLine_enabled = 0
-
-# autocompletion
-set autocomplete
-set complete=.^5,w^5,b^5,u^5
-set completeopt=popup

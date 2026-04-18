@@ -134,7 +134,6 @@ def LspSetupOptions(): void
     aleSupport: v:true,
     completionMatcher: 'fuzzy',
     outlineOnRight: v:true,
-    showDiagInStatusLine: v:true,
     showInlayHints: v:true,
   }
   g:LspOptionsSet(opts)

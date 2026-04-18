@@ -5,13 +5,13 @@ def CodeiumSetup(): void
         # Disable Codeium default keybindings
         g:codeium_disable_bindings = 1
         #Accept completion
-        imap <script><silent><nowait><expr> <C-a> codeium#Accept()
+        imap <script><silent><nowait><expr> <C-a>c codeium#Accept()
         # next completion
-        imap <C-x>x <Cmd>call codeium#CycleCompletions(1)<CR>
+        imap <C-x>c <Cmd>call codeium#CycleCompletions(1)<CR>
         # previous completion
-        imap <C-r> <Cmd>call codeium#CycleCompletions(-1)<CR>
+        imap <C-r>c <Cmd>call codeium#CycleCompletions(-1)<CR>
         # clear suggestion
-        imap <C-l> <Cmd>call codeium#Clear()<CR>
+        imap <C-l>c <Cmd>call codeium#Clear()<CR>
     catch
         echo 'CodeiumSetup() failed: ' .. v:exception
     endtry

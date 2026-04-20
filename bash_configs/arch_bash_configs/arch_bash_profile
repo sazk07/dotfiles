@@ -17,6 +17,7 @@ includes=(
     flutter_path
     android_path
     java_path
+    cargo_path
 )
 
 for include in "${includes[@]}"; do

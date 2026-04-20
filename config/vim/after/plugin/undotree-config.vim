@@ -2,7 +2,7 @@ vim9script
 
 def UndotreeSetup(): void
     try
-        nnoremap <silent> <leader>u :UndotreeToggle<CR>
+        nnoremap <silent> <leader>u <Cmd>UndotreeToggle<CR>
     catch
         echo "UndotreeSetup failed: " .. v:exception
     endtry

@@ -125,27 +125,27 @@ augroup END
 
 def FormatEnable(): void
     # Remove any existing format autocmds to avoid duplicates
-    augroup AutoFormat
+    augroup ALEFix
         autocmd!
-        autocmd BufWritePre * if expand('<afile>:p') !~# '/node_modules/' | Autoformat | endif
+        autocmd BufWritePre * if expand('<afile>:p') !~# '/node_modules/' | ALEFix | endif
     augroup END
-    g:autoformat_enabled = 1
+    g:ale_fix_on_save = 1
     echo "Autoformat enabled globally (excluding node_modules/)"
 enddef
 
 def FormatDisable(bang: bool): void
     if bang
         # Bang provided: disable for current buffer only
-        b:autoformat_enabled = 0
+        b:ale_fix_on_save = 0
         # Override the global autocmd for this buffer
-        autocmd! AutoFormat BufWritePre <buffer>
+        autocmd! ALEFix BufWritePre <buffer>
         echo "Autoformat disabled for current buffer"
     else
         # No bang: disable globally
-        augroup AutoFormat
+        augroup ALEFix
             autocmd!
         augroup END
-        g:autoformat_enabled = 0
+        g:ale_fix_on_save = 0
         echo "Autoformat disabled globally"
     endif
 enddef

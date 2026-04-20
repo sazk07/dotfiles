@@ -25,7 +25,7 @@ vnoremap <silent> <leader>d "_d
 # disable Q"
 nnoremap <silent> Q <nop>
 # format buffer"
-nnoremap <silent> <leader>ft :Autoformat<CR>
+nnoremap <silent> <leader>ft <Cmd>ALEFix<CR>
 # forward qfixlist"
 nnoremap <silent> <leader>kq :cnext<CR>zz
 # backward qfixlist"

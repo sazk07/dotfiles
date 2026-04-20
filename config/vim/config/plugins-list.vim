@@ -12,7 +12,6 @@ augroup PackAddOnVimEnter
     autocmd VimEnter * ++once packadd vim-sleuth
     autocmd VimEnter * ++once packadd vim-commentary
     autocmd VimEnter * ++once packadd vimwiki
-    autocmd VimEnter * ++once packadd lsp
     autocmd VimEnter * ++once packadd ale
     autocmd VimEnter * ++once packadd fzf.vim
 augroup END
@@ -29,12 +28,6 @@ augroup END
 
 augroup PackAddOnBufReadPost
     autocmd!
-    autocmd BufReadPost * ++once packadd vim-autoformat
     autocmd BufReadPost * ++once packadd auto-pairs
-    autocmd BufReadPost * ++once packadd vim-vsnip
-    autocmd BufReadPost * ++once packadd vim-vsnip-integ
-    autocmd BufReadPost * ++once packadd friendly-snippets
-    autocmd BufReadPost * ++once packadd asyncomplete.vim
-    autocmd BufReadPost * ++once packadd asyncomplete-omni.vim
-    autocmd BufReadPost * ++once packadd asyncomplete-vsnip.vim
+    autocmd BufReadPost * ++once packadd emmet-vim
 augroup END

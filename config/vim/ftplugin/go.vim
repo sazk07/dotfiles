@@ -1,4 +1,6 @@
-" fatih/vim-go settings
-let g:go_def_mode = "gopls"
-let g:go_info_mode = "gopls"
+vim9script
+
+# fatih/vim-go settings
+g:go_def_mode = "gopls"
+g:go_info_mode = "gopls"
 

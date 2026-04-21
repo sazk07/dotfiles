@@ -155,3 +155,5 @@ command! -bang FormatDisable FormatDisable(<bang>0)
 
 # indentLine plugin setting
 g:indentLine_enabled = 0
+# codeium setting
+g:codeium_disable_bindings = 1

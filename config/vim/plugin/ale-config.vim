@@ -62,7 +62,7 @@ g:ale_hover_cursor = 1
 # Virtual Text (optional)
 # Set to 0 if you find it noisy.
 if has('textprop')
-  g:ale_virtualtext_cursor = 'current'   
+  g:ale_virtualtext_cursor = 'current'
 endif
 
 # Linters
@@ -130,7 +130,7 @@ g:ale_linters['cpp'] = ['clangd']
 # Fixers / Formatters
 # '*' applies to ALL filetypes before type-specific fixers run.
 # Order within each list matters: fixers run left → right.
-g:ale_fixers = { 
+g:ale_fixers = {
   '*': ['remove_trailing_lines', 'trim_whitespace'],
   'javascript': ['prettier', 'eslint'],
   'javascriptreact': ['prettier', 'eslint'],
@@ -177,7 +177,7 @@ g:ale_javascript_prettier_use_local_config = 1
 # Uncomment if you use a virtual environment and want ALE to find it:
 # g:ale_python_auto_virtualenv = 1
 
-# Go 
+# Go
 # golines: target line length (adjust to your preference).
 g:ale_go_golines_options = '--max-len=120'
 # goimports-reviser: set your module path if needed.
@@ -240,25 +240,3 @@ augroup ALEFiletypeDetect
   # tsconfig / jsconfig are JSONC (allow comments)
   autocmd BufRead,BufNewFile tsconfig*.json setfiletype jsonc
   autocmd BufRead,BufNewFile jsconfig*.json setfiletype jsonc
-augroup END
-
-# Key Mappings
-# Navigation
-nnoremap <silent> gd <Plug>(ale_go_to_definition)
-nnoremap <silent> gD <Plug>(ale_go_to_definition_in_vsplit)
-nnoremap <silent> gy <Plug>(ale_go_to_type_definition)
-nnoremap <silent> <leader>vrr <Plug>(ale_find_references)
-nnoremap <silent> K <Plug>(ale_hover)
-# Refactoring
-nnoremap <silent> <leader>vrn <Plug>(ale_rename)
-nnoremap <silent> <leader>vca <Plug>(ale_code_action)
-# Diagnostics jump
-nnoremap <silent> [d <Plug>(ale_previous_wrap)
-nnoremap <silent> ]d <Plug>(ale_next_wrap)
-nnoremap <silent> [e <Plug>(ale_previous_wrap_error)
-nnoremap <silent> ]e <Plug>(ale_next_wrap_error)
-nnoremap <silent> <leader>vd <Cmd>ALEDetail<CR>
-# Manual actions
-nnoremap <silent> <leader>fx <Cmd>ALEFix<CR>
-nnoremap <silent> <leader>al <Cmd>ALEToggle<CR>
-nnoremap <silent> <leader>ai <Cmd>ALEInfo<CR>

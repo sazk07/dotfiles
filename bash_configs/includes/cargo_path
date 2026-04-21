@@ -8,6 +8,15 @@ prepend_to_path() {
   esac
 }
 
+append_to_path() {
+  local dir=$1
+  [[ -d $dir ]] || return
+  case ":$PATH:" in
+    *":$dir:"*) ;;
+    *) PATH="${PATH:+"$PATH:"}$dir" ;;
+  esac
+}
+
 # Load Cargo environment if env file exists
 if [[ -z "$CARGO_DIR" ]]; then
     readonly CARGO_DIR="${HOME}/.cargo"
@@ -19,5 +28,5 @@ if [[ -f "$CARGO_ENV" ]]; then
     # shellcheck source=/dev/null
     source "$CARGO_ENV"
 elif [[ -d "$CARGO_DIR/bin" ]]; then
-    prepend_to_path "${CARGO_DIR}/bin"
+    append_to_path "${CARGO_DIR}/bin"
 fi

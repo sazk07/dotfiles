@@ -138,7 +138,7 @@ local ok, start = pcall(function()
 
 	-- setup ts_ls with vs_ls
 	local vue_language_server_path = vim.fn.stdpath('data') ..
-			"/mason/packages/vue-language-server/node_modules/@vue/language-server"
+		"/mason/packages/vue-language-server/node_modules/@vue/language-server"
 	local cfg = vim.lsp.config.ts_ls
 	local tsserver_filetypes = (cfg and cfg.filetypes) or {}
 	local vue_plugin = {

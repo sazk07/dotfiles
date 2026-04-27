@@ -1,4 +1,4 @@
-local ok, start = pcall(function ()
+local ok, start = pcall(function()
 	vim.keymap.set("i", "<C-a>", function()
 		return vim.fn["codeium#Accept"]()
 	end, {
@@ -33,5 +33,5 @@ if not ok then
 	start = nil
 end
 if start then
-  start()
+	start()
 end

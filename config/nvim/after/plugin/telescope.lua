@@ -41,7 +41,7 @@ local ok, start = pcall(function()
 	vim.keymap.set("n", "<leader>gdv", builtin.git_status, { desc = "git view" })
 	vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "find help" })
 	telescope.load_extension("http")
-  telescope.load_extension("dap")
+	telescope.load_extension("dap")
 end)
 
 if not ok then

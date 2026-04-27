@@ -18,8 +18,8 @@ if peek then
 	vim.api.nvim_create_user_command("PeekOpen", function()
 		local ft = vim.bo[vim.api.nvim_get_current_buf()].filetype
 		if
-				not peek.is_open()
-				and (ft == "vimwiki" or ft == "markdown" or ft == "wiki" or ft == "markdown.pandoc" or ft == "markdown.gfm")
+			not peek.is_open()
+			and (ft == "vimwiki" or ft == "markdown" or ft == "wiki" or ft == "markdown.pandoc" or ft == "markdown.gfm")
 		then
 			vim.fn.system("i3-msg split horizontal")
 			peek.open()
@@ -30,8 +30,8 @@ if peek then
 		peek.setup({ theme = "light" })
 		local ft = vim.bo[vim.api.nvim_get_current_buf()].filetype
 		if
-				not peek.is_open()
-				and (ft == "vimwiki" or ft == "markdown" or ft == "wiki" or ft == "markdown.pandoc" or ft == "markdown.gfm")
+			not peek.is_open()
+			and (ft == "vimwiki" or ft == "markdown" or ft == "wiki" or ft == "markdown.pandoc" or ft == "markdown.gfm")
 		then
 			vim.fn.system("i3-msg split horizontal")
 			peek.open()

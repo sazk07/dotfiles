@@ -122,7 +122,7 @@ return require("packer").startup(function(use)
 			"theHamsta/nvim-dap-virtual-text",
 			"jay-babu/mason-nvim-dap.nvim",
 			"mfussenegger/nvim-dap-python", -- requires debugpy from Mason
-			"leoluz/nvim-dap-go",        -- requires delve from Mason
+			"leoluz/nvim-dap-go",  -- requires delve from Mason
 			"rcarriga/cmp-dap",
 		},
 		event = { "VimEnter" },

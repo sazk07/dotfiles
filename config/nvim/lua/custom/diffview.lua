@@ -46,7 +46,7 @@ if diffview then
 					actions.focus_files,
 					{ desc = "Bring focus to the file panel" },
 				},
-				{ "n", "<leader>b", actions.toggle_files, { desc = "Toggle the file panel." } },
+				{ "n", "<leader>b", actions.toggle_files,            { desc = "Toggle the file panel." } },
 				{
 					"n",
 					"g<C-x>",
@@ -89,7 +89,7 @@ if diffview then
 					actions.conflict_choose("all"),
 					{ desc = "Choose all the versions of a conflict" },
 				},
-				{ "n", "dx", actions.conflict_choose("none"), { desc = "Delete the conflict region" } },
+				{ "n", "dx",        actions.conflict_choose("none"), { desc = "Delete the conflict region" } },
 				{
 					"n",
 					"<leader>cO",
@@ -132,13 +132,13 @@ if diffview then
 			diff3 = {
 				-- Mappings in 3-way diff layouts
 				{
-					{ "n", "x" },
+					{ "n",                                                            "x" },
 					"2do",
 					actions.diffget("ours"),
 					{ desc = "Obtain the diff hunk from the OURS version of the file" },
 				},
 				{
-					{ "n", "x" },
+					{ "n",                                                              "x" },
 					"3do",
 					actions.diffget("theirs"),
 					{ desc = "Obtain the diff hunk from the THEIRS version of the file" },
@@ -148,19 +148,19 @@ if diffview then
 			diff4 = {
 				-- Mappings in 4-way diff layouts
 				{
-					{ "n", "x" },
+					{ "n",                                                            "x" },
 					"1do",
 					actions.diffget("base"),
 					{ desc = "Obtain the diff hunk from the BASE version of the file" },
 				},
 				{
-					{ "n", "x" },
+					{ "n",                                                            "x" },
 					"2do",
 					actions.diffget("ours"),
 					{ desc = "Obtain the diff hunk from the OURS version of the file" },
 				},
 				{
-					{ "n", "x" },
+					{ "n",                                                              "x" },
 					"3do",
 					actions.diffget("theirs"),
 					{ desc = "Obtain the diff hunk from the THEIRS version of the file" },
@@ -228,7 +228,7 @@ if diffview then
 					actions.toggle_stage_entry,
 					{ desc = "Stage / unstage the selected entry" },
 				},
-				{ "n", "S", actions.stage_all, { desc = "Stage all entries" } },
+				{ "n", "S", actions.stage_all,   { desc = "Stage all entries" } },
 				{ "n", "U", actions.unstage_all, { desc = "Unstage all entries" } },
 				{
 					"n",
@@ -242,14 +242,14 @@ if diffview then
 					actions.open_commit_log,
 					{ desc = "Open the commit log panel" },
 				},
-				{ "n", "zo", actions.open_fold, { desc = "Expand fold" } },
-				{ "n", "h", actions.close_fold, { desc = "Collapse fold" } },
-				{ "n", "zc", actions.close_fold, { desc = "Collapse fold" } },
-				{ "n", "za", actions.toggle_fold, { desc = "Toggle fold" } },
-				{ "n", "zR", actions.open_all_folds, { desc = "Expand all folds" } },
-				{ "n", "zM", actions.close_all_folds, { desc = "Collapse all folds" } },
+				{ "n", "zo",    actions.open_fold,          { desc = "Expand fold" } },
+				{ "n", "h",     actions.close_fold,         { desc = "Collapse fold" } },
+				{ "n", "zc",    actions.close_fold,         { desc = "Collapse fold" } },
+				{ "n", "za",    actions.toggle_fold,        { desc = "Toggle fold" } },
+				{ "n", "zR",    actions.open_all_folds,     { desc = "Expand all folds" } },
+				{ "n", "zM",    actions.close_all_folds,    { desc = "Collapse all folds" } },
 				{ "n", "<c-b>", actions.scroll_view(-0.25), { desc = "Scroll the view up" } },
-				{ "n", "<c-f>", actions.scroll_view(0.25), { desc = "Scroll the view down" } },
+				{ "n", "<c-f>", actions.scroll_view(0.25),  { desc = "Scroll the view down" } },
 				{
 					"n",
 					"<tab>",
@@ -305,14 +305,14 @@ if diffview then
 					{ desc = "Bring focus to the file panel" },
 				},
 				{ "n", "<leader>b", actions.toggle_files, { desc = "Toggle the file panel" } },
-				{ "n", "g<C-x>", actions.cycle_layout, { desc = "Cycle available layouts" } },
+				{ "n", "g<C-x>",    actions.cycle_layout, { desc = "Cycle available layouts" } },
 				{
 					"n",
 					"[x",
 					actions.prev_conflict,
 					{ desc = "Go to the previous conflict" },
 				},
-				{ "n", "]x", actions.next_conflict, { desc = "Go to the next conflict" } },
+				{ "n", "]x", actions.next_conflict,      { desc = "Go to the next conflict" } },
 				{ "n", "g?", actions.help("file_panel"), { desc = "Open the help panel" } },
 				{
 					"n",
@@ -346,7 +346,7 @@ if diffview then
 				},
 			},
 			file_history_panel = {
-				{ "n", "g!", actions.options, { desc = "Open the option panel" } },
+				{ "n", "g!", actions.options,         { desc = "Open the option panel" } },
 				{
 					"n",
 					"<C-A-d>",
@@ -359,8 +359,8 @@ if diffview then
 					actions.copy_hash,
 					{ desc = "Copy the commit hash of the entry under the cursor" },
 				},
-				{ "n", "L", actions.open_commit_log, { desc = "Show commit details" } },
-				{ "n", "zR", actions.open_all_folds, { desc = "Expand all folds" } },
+				{ "n", "L",  actions.open_commit_log, { desc = "Show commit details" } },
+				{ "n", "zR", actions.open_all_folds,  { desc = "Expand all folds" } },
 				{ "n", "zM", actions.close_all_folds, { desc = "Collapse all folds" } },
 				{
 					"n",
@@ -405,7 +405,7 @@ if diffview then
 					{ desc = "Open the diff for the selected entry." },
 				},
 				{ "n", "<c-b>", actions.scroll_view(-0.25), { desc = "Scroll the view up" } },
-				{ "n", "<c-f>", actions.scroll_view(0.25), { desc = "Scroll the view down" } },
+				{ "n", "<c-f>", actions.scroll_view(0.25),  { desc = "Scroll the view down" } },
 				{
 					"n",
 					"<tab>",
@@ -442,17 +442,17 @@ if diffview then
 					actions.focus_files,
 					{ desc = "Bring focus to the file panel" },
 				},
-				{ "n", "<leader>b", actions.toggle_files, { desc = "Toggle the file panel" } },
-				{ "n", "g<C-x>", actions.cycle_layout, { desc = "Cycle available layouts" } },
-				{ "n", "g?", actions.help("file_history_panel"), { desc = "Open the help panel" } },
+				{ "n", "<leader>b", actions.toggle_files,               { desc = "Toggle the file panel" } },
+				{ "n", "g<C-x>",    actions.cycle_layout,               { desc = "Cycle available layouts" } },
+				{ "n", "g?",        actions.help("file_history_panel"), { desc = "Open the help panel" } },
 			},
 			option_panel = {
-				{ "n", "<tab>", actions.select_entry, { desc = "Change the current option" } },
-				{ "n", "q", actions.close, { desc = "Close the panel" } },
-				{ "n", "g?", actions.help("option_panel"), { desc = "Open the help panel" } },
+				{ "n", "<tab>", actions.select_entry,         { desc = "Change the current option" } },
+				{ "n", "q",     actions.close,                { desc = "Close the panel" } },
+				{ "n", "g?",    actions.help("option_panel"), { desc = "Open the help panel" } },
 			},
 			help_panel = {
-				{ "n", "q", actions.close, { desc = "Close help menu" } },
+				{ "n", "q",     actions.close, { desc = "Close help menu" } },
 				{ "n", "<esc>", actions.close, { desc = "Close help menu" } },
 			},
 		},

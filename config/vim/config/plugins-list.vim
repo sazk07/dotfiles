@@ -34,4 +34,5 @@ augroup PackAddOnBufReadPost
     autocmd BufReadPost * ++once packadd vim-vsnip-integ
     autocmd BufReadPost * ++once packadd friendly-snippets
     autocmd BufReadPost * ++once packadd emmet-vim
+    autocmd BufReadPost * ++once packadd markdown-preview.nvim
 augroup END

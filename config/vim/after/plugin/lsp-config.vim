@@ -43,7 +43,43 @@ def LspSetupServers(): void
       filetype: ['json'],
       path: 'vscode-json-language-server',
       args: ['--stdio'],
-      initializeOptions: { 'provideFormatter': v:true },
+      initializationOptions: { 'provideFormatter': v:true },
+    },
+    # Latex
+    {
+      name: 'texlab',
+      filetype: ['tex', 'bib', 'plaintex'],
+      path: 'texlab',
+      rootSearch: [
+        ".git",
+        ".latexmkrc",
+        "latexmkrc",
+        ".texlabroot",
+        "texlabroot",
+        "Tectonic.toml"
+      ],
+      initializationOptions: {
+        settings: {
+          texlab: {
+            bibtexFormatter: "texlab",
+            build: {
+              args: ["-pdf", "-interaction=nonstopmode", "-synctex=1", "%f"],
+              executable: "latexmk",
+              forwardSearchAfter: false,
+              onSave: false
+            },
+            chktex: {
+              onEdit: false,
+              onOpenAndSave: false
+            },
+            diagnosticsDelay: 300,
+            formatterLineLength: 80,
+            forwardSearch: { args: {} },
+            latexFormatter: "latexindent",
+            latexindent: { modifyLineBreaks: false }
+          }
+        }
+      }
     },
     # Lua
     {
@@ -62,7 +98,7 @@ def LspSetupServers(): void
     {
       name: 'pyright',
       filetype: 'python',
-      path: 'pyright',
+      path: 'pyright-langserver',
       args: ['--stdio'],
       workspaceConfig: {
       python: {

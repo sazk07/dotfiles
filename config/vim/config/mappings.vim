@@ -49,7 +49,7 @@ inoremap <silent> jj <Esc>
 # escape insert mode"
 inoremap <silent> jk <Esc>
 # bind fzf command to <leader>ff
-nnoremap <leader>ff :Files<Space>.<CR>
+nnoremap <leader>ff <Cmd>Files<Space>.<CR>
 # bind <leader>fg to :Rg
 nnoremap <leader>fg :Rg<Space>
 

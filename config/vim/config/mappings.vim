@@ -27,13 +27,13 @@ nnoremap <silent> Q <nop>
 # format buffer"
 nnoremap <silent> <leader>ft <Cmd>ALEFix<CR>
 # forward qfixlist"
-nnoremap <silent> <leader>kq :cnext<CR>zz
+nnoremap <silent> <leader>kq <Cmd>cnext<CR>zz
 # backward qfixlist"
-nnoremap <silent> <leader>jq :cprev<CR>zz
+nnoremap <silent> <leader>jq <Cmd>cprev<CR>zz
 # forward location list"
-nnoremap <silent> <leader>kl :lnext<CR>zz
+nnoremap <silent> <leader>kl <Cmd>lnext<CR>zz
 # backward location list"
-nnoremap <silent> <leader>jl :lprev<CR>zz
+nnoremap <silent> <leader>jl <Cmd>lprev<CR>zz
 # sed on word at cursor"
 nnoremap <silent> <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 # insert line below in normal mode"
